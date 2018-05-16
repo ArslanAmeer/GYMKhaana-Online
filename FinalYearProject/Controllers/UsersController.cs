@@ -155,6 +155,18 @@ namespace FinalYearProject.Controllers
             }
             return RedirectToAction("Login");
         }
+        [HttpGet]
+        public ActionResult UpdateUser(int id)
+        {
+            User user = new UserHandler().GetUserById(id);
+            return View(user);
+        }
 
+        [HttpPost]
+        public ActionResult UpdateUser(User user)
+        {
+
+            return View();
+        }
     }
 }
