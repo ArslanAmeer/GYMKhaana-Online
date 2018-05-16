@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>Gallery</title>
+</head>
+<body>
+    <div>
+        <p>
+            @Html.ActionLink("Upload New", "Upload")
+        </p>
+        <table>
+            @{
+                //int j = 0;
+                //while (j < Model.Count())
+                {
+                    <tr>
+                        <td>
+                            @*<img src="data:image/png;base64,@Convert.ToBase64String(Model[j].ImageData,0,Model[j].ImageData.Length)" width="1000" />*@
+                            <img src="~/Content/Images/gymlogo.jpg" />
+                            <img src="~/Content/Images/icongym.png" />
+                            <img src="~/Content/Images/logoooo.png" />
+                        </td>
+                    </tr>
+                    //  j++;
+                }
+            }
+        </table>
+    </div>
+
+</body>
+</html>

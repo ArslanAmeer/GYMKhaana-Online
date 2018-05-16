@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Attandance>
+
+@{
+    ViewBag.Title = "AttandanceDetails";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="card mt-2">
+    <div class="card-header text-center bg-dark lighten-1 white-text">Payment</div>
+    <div class="card-body">
+        <table class="table table-hover table-striped">
+            <tr class="bg-dark white-text">
+                <th>
+                    @Html.DisplayNameFor(model => model.DateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Member.FullName)
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Picture
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.DateTime)</td>
+                    <td>@Html.DisplayFor(m => item.Member.FullName)</td>
+                    <td>@Html.DisplayFor(m => item.AttandanceDdl.Name)</td>
+                    <td><img src="~/Content/MemberPics/@Url.Content(item.Member.ImageUrl)" class="img-responsive img-thumbnail" style="border-radius: 50%; width: 70px; height: 70px;" /></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

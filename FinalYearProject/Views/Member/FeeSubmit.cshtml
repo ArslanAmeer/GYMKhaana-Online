@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>FeeSubmit</title>
+</head>
+<body>
+    <div>
+        <h1 style="text-align:center">Builder's Gym</h1>
+        <h1 style="text-align:center">Fee Submision</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <form method="post" action="/Member/Submitted">
+                <div class="form-group">
+                    <label for="roll">Your RollNo</label>
+                    <input type="text" id="roll" name="Rollno" placeholder="Enter Roll No." class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="Fee">Your Amount</label>
+                    <input type="text" id="Fee" name="Fee" placeholder="Enter Amount" class="form-control" />
+                </div>
+                <input type="submit" value="Submit" class="btn btn-success" />
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿@model FinalProjectClasses.GymMngmnt.Member
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Adding Member</h1>
+@using (Html.BeginForm("AddMember", "Member", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-lg-3">
+            <div style="margin-bottom: 6%;">
+                <div class="" id="fileUpldbtnContainer" style="padding: 0; width: 221px;">
+                    <div>
+                        <img id="blah" src="" alt="" class="img-responsive" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 2px" />
+                    </div>
+                    <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 51px; font-size: 74px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);">
+                        <span class="uploadFile"><span class="glyphicon glyphicon-plus"></span></span>
+                        <input id="photo" name="photo" type="file" class="upload" style="position: absolute; top:-2px;left: 16px; margin: 0; padding: 0px; font-size: 2em; cursor: pointer; opacity: 0; filter: alpha(opacity=0); box-sizing: content-box; width: 197px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 ">
+            <div class="md-form form-sm">
+                <i class="fa fa-user fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.FullName, "", new { @class = "form-control", id = "input-1", type = "text" })
+                @Html.LabelFor(m => m.FullName, new { @for = "input-1" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-id-card fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.CNIC, "", new { @class = "form-control", id = "input-3", type = "number" })
+                @Html.LabelFor(m => m.CNIC, new { @for = "input-3" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-mobile-phone fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.MobileNo, "", new { @class = "form-control", id = "input-4", type = "number" })
+                @Html.LabelFor(m => m.MobileNo, new { @for = "input-4" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-address-card fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.FullAddress, "", new { @class = "form-control", id = "input-5", type = "text" })
+                @Html.LabelFor(m => m.FullAddress, new { @for = "input-5" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-calendar fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.DateofBirth, "", new { @class = "form-control", type = "date" })
+            </div>
+
+            <fieldset>
+                <legend border="1px">@Html.LabelFor(m => m.Gender.Name)</legend>
+                @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
+                {
+                    <label>@Html.RadioButton("Gender.Name", b.Value) @b.Text</label>
+                }
+            </fieldset>
+
+        </div>
+        <div class="col-lg-4">
+
+            <div class="md-form form-sm">
+                <i class="fa fa-id-badge fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.RollNo, "", new { @class = "form-control", id = "input-7", type = "number" })
+                @Html.LabelFor(m => m.RollNo, new { @for = "input-7" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-paypal fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.Fee, "", new { @class = "form-control", id = "input-8", type = "number" })
+                @Html.LabelFor(m => m.Fee, new { @for = "input-8" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-calendar fa-lg prefix"></i>
+
+                @Html.TextBoxFor(m => m.CurrentDate, "", new { @class = "form-control", id = "input-9", placeholder = "Current Date", type = "date" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-calendar fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.SubmissionDate, "", new { @class = "form-control", id = "input-10", type = "date" })
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-user-times fa-lg prefix"></i>
+                @Html.TextBoxFor(m => m.SubmitTo, "", new { @class = "form-control", id = "input-11", type = "text" })
+                @Html.LabelFor(m => m.SubmitTo, new { @for = "input-11" })
+            </div>
+        </div>
+
+    </div>
+
+    <button class=" pull-right btn btn-outline-dark-green" type="submit"><span class="fa fa-user-plus"></span>&nbsp;Register</button>
+    <button type="reset" class="pull-right btn btn-outline-danger"><span class="fa fa-remove"></span>&nbsp;Cancle</button>
+}
+@section myscript
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '.fileUpload', function () {
+                $(this).children('.upload').change(function (event) {
+                    readURL(this);
+                    fileName = $(this).val();
+                });
+            });
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        });
+    </script>
+}

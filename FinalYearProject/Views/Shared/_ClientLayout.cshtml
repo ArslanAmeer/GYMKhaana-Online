@@ -1,0 +1,120 @@
+﻿@using FinalProjectClasses.UserMgment
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@{
+            User currentUser = (User)Session[WebUtils.Current_User];
+        }*@
+    @*<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>*@
+    <!--===============================================================================================-->
+    <link href="~/Content/MDB/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/MDB/fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/MDB/css/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/MDB/css/mdb.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/MDB/css/style.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/Log/Client.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <!--===============================================================================================-->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+        <a class="navbar-brand" href="#"><span class="fa fa-gbp"></span>ymKhana</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index","Client")"><span class="fa fa-home fa-lg"></span>&nbsp;Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="fa fa-image"></span>&nbsp;Images</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index","Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-user"></span> User
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Your Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Special Work</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!--=========================================Header End======================================================-->
+    <div class="row" style="padding: 0px;margin: 0px">
+        <div class="col-lg-3 hidden-sm">
+            <div class="nav-side-menu">
+                @*<div class="brand" style="margin-top: 2%">
+                        <img src="~/Content/Images/@Url.Content(currentUser.ImageUrl)" class="img-responsive" style="width: 120px; height: 120px;border-radius: 50%" alt="@currentUser.Fullname" />
+                        <br /> <strong>@currentUser.Fullname</strong>
+                    </div>*@
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content collapse">
+                        <li data-toggle="collapse" data-target="#products">
+                            <a href="#"><i class="fa fa-table fa-lg"></i>&nbsp;Check Attandance</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#service">
+                            <a href="#"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="#"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Watch Video's</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="#"><i class="fa fa-image fa-lg"></i>&nbsp;Image Gallery </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+    <!--===============================================================================================-->
+    <script src="~/Content/MDB/js/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Content/MDB/js/popper.min.js"></script>
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <script src="~/Content/MDB/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Content/MDB/js/mdb.min.js"></script>
+    <!--===============================================================================================-->
+
+    @RenderSection("myscript", required: false)
+</body>
+</html>

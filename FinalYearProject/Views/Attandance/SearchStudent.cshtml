@@ -1,0 +1,137 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Member>
+@{
+    ViewBag.Title = "SearchStudent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Log/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row mt-2 ml-2">
+    <div class="col-md-12">
+        <div class="card">
+            <h3 class="card-header text-center bg-dark white-text">Your Registered Client's</h3>
+            <div class="card-body">
+                <p class="card-text">
+                    <table class="table table-responsive table-bordered table-striped table-hover" id="myTable">
+                        <thead>
+                            <tr class="bg-dark white-text">
+                                <th>FullName</th>
+                                <th>CNIC</th>
+                                <th>MobileNo</th>
+                                <th>Photo</th>
+                                <th>Fee</th>
+                                <th>RollNo</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var v in Model)
+                            {
+                                <tr>
+                                    <td>@v.FullName</td>
+                                    <td>@v.CNIC</td>
+                                    <td>@v.MobileNo</td>
+                                    <td><img src="~/Content/MemberPics/@Url.Content(v.ImageUrl)" alt="Image is Moved" style="width: 70px; height: 70px;border-radius:50% " /></td>
+                                    <td>@v.Fee</td>
+                                    <td>@v.RollNo</td>
+                                    <td>
+                                        <a href="@Url.Action("MarkAttandance", "Attandance",new {id=v.Id})">Attandance</a>|
+                                        <a href="@Url.Action("SubmitPayment", "Payment",new {id=v.Id})">Payment</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@section myscript
+{
+    <script src="~/Content/Log/css/jquery.dataTables.min.js"></script>
+    <script src="~/Content/Log/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            $('#myTable').DataTable();
+        });
+
+    </script>
+}
+
+@*//$(function () {
+    //    $('#myTable').DataTable({
+    //        "ajax": {
+    //            "url": "/Attandance/SearchData",
+    //            "type": "GET",
+    //            "datatype": "json"
+    //        },
+    //        "columns": [
+    //            {
+    //                "data": "FullName",
+    //                "autoWidth": true
+    //            },
+    //            {
+    //                "data": "CNIC",
+    //                "autoWidth": true
+    //            },
+    //            {
+    //                "data": "MobileNo",
+    //                "autoWidth": true
+    //            },
+    //            {
+    //                "data": "Fee",
+    //                "autoWidth": true
+    //            },
+    //            {
+    //                "data": "ImageUrl",
+    //                "autoWidth": true
+    //            },
+
+
+    //            {
+    //                "data": "RollNo",
+    //                "autoWidth": true
+    //            }
+    //        ]
+    //    });
+    //});*@
+@*{
+    "processing": true, // control the processing indicator.
+    "serverSide":true, // recommended to use serverSide when data is more than 10000 rows for performance reasons
+    "info": true, // control table information display field
+    "stateSave": true, //restore table state on page reload,
+    "lengthMenu":
+    [
+        [10, 20, 50, -1], [10, 20, 50, "All"]
+    ], // use the first inner array as the page length values and the second inner array as the displayed options
+    "ajax": {
+        "url":
+            "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/attandance/searchdata",
+            "type": "GET"
+            },
+            "columns": [
+            { "data": "FullName", "orderable": true, "autoWidth": true },
+            { "data": "CNIC", "orderable": true, "autoWidth": true },
+            { "data": "MobileNo", "orderable": true, "autoWidth": true },
+            { "data": "Fee", "orderable": true, "autoWidth": true },
+            { "data": "RollNo", "orderable": true, "autoWidth": true },
+            {
+            "render": function(data, type, JsonResultRow, meta) {
+            return '<img src="/Content/MemberPics/' +
+                    JsonResultRow.ImageUrl +
+                    '" style="width:70px;height:70px;border-radius:50%;">';
+            }
+            },
+            {
+            "render": function (data, type, JsonResultRow, meta)
+            {
+            return '<a href="/Attandance/MarkAttandance/' + JsonResultRow.Id + '" class="btn btn-primary btn-sm">Mark</a> ';
+            }
+            }
+            ],
+            "order": [[0, "asc"]]
+            }*@
+
+

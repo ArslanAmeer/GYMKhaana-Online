@@ -1,0 +1,198 @@
+﻿@model FinalProjectClasses.UserMgment.User
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = null;
+}
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/animate/animate.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/select2/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/css/main.css" rel="stylesheet" />
+<link href="~/Content/Log/css/util.css" rel="stylesheet" />
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <span class="login100-form-title p-b-26">
+                Welcome to My GymKhana
+            </span>
+            @using (Html.BeginForm("SignUp", "Users", new { c = ViewBag.Controller, a = ViewBag.Action }, FormMethod.Post, new { @class = "login100-form validate-form", enctype = "multipart/form-data" }))
+            {
+                <div class="validate-input" style="margin-left: 20%">
+                    <div style="margin-bottom: 6%;">
+                        <div class="" id="fileUpldbtnContainer" style="padding: 0; width: 221px;">
+                            <div>
+                                <img id="blah" src="" alt="" class="img-responsive" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 2px;border-radius:50%" />
+                            </div>
+                            <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 51px; font-size: 74px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);border-radius:50%">
+                                <span class="uploadFile"><span class="glyphicon glyphicon-plus"></span></span>
+                                <input id="photo" name="photo" type="file" class="upload" style="position: absolute; top:-2px;left: 16px; margin: 0; padding: 0px; font-size: 2em; cursor: pointer; opacity: 0; filter: alpha(opacity=0); box-sizing: content-box; width: 197px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter Your Name: Usman Haider khan">
+                    @Html.TextBoxFor(x => x.Fullname, "", new { @class = "input100", type = "text", name = "Fullname" })
+                    <span class="focus-input100" data-placeholder="Fullname"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: usm@gmail.com">
+                    @Html.TextBoxFor(x => x.Loginid, "", new { @class = "input100", type = "text", name = "Loginid" })
+                    <span class="focus-input100" data-placeholder="Loginid"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <span class="btn-show-pass">
+                        <i class="zmdi zmdi-eye"></i>
+                    </span>
+                    @Html.TextBoxFor(x => x.Password, "", new { @class = "input100", type = "password", name = "Password" })
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <span class="btn-show-pass">
+                        <i class="zmdi zmdi-eye"></i>
+                    </span>
+                    @Html.TextBoxFor(x => x.ConfirmPassword, "", new { @class = "input100", type = "password", name = "ConfirmPassword" })
+                    <span class="focus-input100" data-placeholder="ConfirmPassword"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: usm@gmail.com">
+                    @Html.TextBoxFor(x => x.Email, "", new { @class = "input100", type = "text", name = "email" })
+                    <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your Valid CNIC">
+                    @Html.TextBoxFor(x => x.Cnic, "", new { @class = "input100", type = "text", name = "Cnic" })
+                    <span class="focus-input100" data-placeholder="CNIC"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your Mobile No">
+                    @Html.TextBoxFor(x => x.MobileNo, "", new { @class = "input100", type = "text", name = "MobileNo" })
+                    <span class="focus-input100" data-placeholder="MobileNo"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your Date of Birth">
+                    @Html.TextBoxFor(x => x.DateofBirth, "", new { @class = "input100", type = "text", name = "DateofBirth" })
+                    <span class="focus-input100" data-placeholder="Date-of-Birth"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your Shift">
+                    @Html.TextBoxFor(x => x.Shift, "", new { @class = "input100", type = "text", name = "Shift" })
+                    <span class="focus-input100" data-placeholder="Select Shift"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+
+                <div class="wrap-input100 validate-input" data-validate="Enter Your FullAddress">
+                    @Html.TextBoxFor(x => x.FullAddress, "", new { @class = "input100", type = "text", name = "FullAddress" })
+                    <span class="focus-input100" data-placeholder="Address"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your City Name">
+                    @Html.TextBoxFor(x => x.City, "", new { @class = "input100", type = "text", name = "City" })
+                    <span class="focus-input100" data-placeholder="City"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter Your State">
+                    @Html.TextBoxFor(x => x.State, "", new { @class = "input100", type = "text", name = "State" })
+                    <span class="focus-input100" data-placeholder="State"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Gender.Name)&nbsp;&nbsp;&nbsp;&nbsp;
+                    @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
+                    {
+                        <label>@Html.RadioButton("gender.Name", b.Value) @b.Text</label>
+                    }
+                </div>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/bootstrap/js/popper.min.js"></script>
+<script src="~/Content/Log/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/select2/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/Content/Log/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/js/main.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '.fileUpload', function () {
+            $(this).children('.upload').change(function (event) {
+                readURL(this);
+                fileName = $(this).val();
+            });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    });
+</script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/bootstrap/js/popper.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/select2/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/Content/Log/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/js/main.js"></script>
+

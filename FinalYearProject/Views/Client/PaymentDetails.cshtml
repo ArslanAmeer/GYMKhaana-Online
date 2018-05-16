@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Payment>
+
+@{
+    ViewBag.Title = "PaymentDetails";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+
+<div class="card mt-2 ml-4">
+    <div class="card-header text-center bg-dark lighten-1 white-text">Payment</div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RollNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaidAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FeeDate)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RollNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaidAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FeeDate)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>ViewUpdate</title>
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align:center">Builder's Gym</h3>
+        <h2>Member's Detail</h2>
+        <div class="row form-group">
+            <form method="post" action="/Member/ViewDetails" class="userId" onsubmit="return ValidateForm()">
+                <input type="text" name="Rollno" placeholder="Enter Roll No." class="mailbox form-control" /><span class="err"></span><br />
+                <input type="submit" value="Check/Update Details" class="btn btn-success" />
+            </form>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function ValidateForm() {
+            $('span.err').html('');
+            var success = true;
+            $(".userId input").each(function () {
+                if ($(this).val() == "") {
+                    $(this).next().html("please fill this feild");
+                    success = false;
+                }
+            });
+            return success;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>ViewDetails</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center">Builders Gym</h1>
+        <h1 style="text-align:center">Member's Detail</h1>
+    </div>
+    <div class="container">
+        <form method="post" action="/Member/UpdateDetails">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Roll No</label>
+                    <input type="text" readonly="readonly" name="Rollno" value="15091" class="form-control" />
+                    <label>Your Name</label>
+                    <input type="text" name="Name" value="Usman Haider Khan" class="form-control" />
+                    <label>Your Address</label>
+                    <input type="text" name="Address" value="FarooqAbad Gaon" class="form-control" />
+                    <label>Submit Date</label>
+                    <input type="datetime" name="Date" value="2/2/2017" class="form-control" /><br />
+                    <input type="submit" value="Update" class="btn btn-success" />
+                    <a href="/Home/Login" class="btn btn-danger">Cancel</a>
+                </div>
+                <div class="col-lg-6">
+                    <label>Total Fee</label>
+                    <input type="text" name="Fee" value="1500/-" class="form-control" />
+                    <label>Due Date</label>
+                    <input type="datetime" name="Feedate" value="22/2/2017" class="form-control" />
+                    <label>Your CNIC</label>
+                    <input type="text" name="Cnic" value="35404-8269499-0" class="form-control" />
+                    <label>Your Phon#</label>
+                    <input type="text" name="Cellno" value="03349875652" class="form-control" />
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

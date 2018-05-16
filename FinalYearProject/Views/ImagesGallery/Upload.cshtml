@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>Upload</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Upload", "GalleryImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            <table>
+                <tr>
+                    <td>Select File:</td>
+                    <td>
+                        <input type="file" name="file" />
+                        @*@Html.TextBoxFor(Model => Model.File, new { type = "file" })*@
+                        @Html.ValidationMessage("Custom Error")
+                    </td>
+                    <td>
+                        <input type="submit" value="Upload" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

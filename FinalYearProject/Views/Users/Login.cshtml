@@ -1,0 +1,103 @@
+﻿@model FinalYearProject.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/animate/animate.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/select2/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<link href="~/Content/Log/css/main.css" rel="stylesheet" />
+<link href="~/Content/Log/css/util.css" rel="stylesheet" />
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <span class="login100-form-title p-b-26">
+                Welcome
+            </span>
+            <span class="login100-form-title p-b-48">
+                <i class="zmdi zmdi-font"></i>
+            </span>
+            <div id="error">
+                @if (ViewBag.Error != null)
+                {
+                    <p class="has-error"> @ViewBag.Error</p>
+
+                }
+            </div>
+            @using (Html.BeginForm("Login", "Users", new { c = ViewBag.Controller, a = ViewBag.Action }, FormMethod.Post, new { id = "loginform", enctype = "plain/text" }))
+            {
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    @Html.TextBoxFor(x => x.Loginid, "", new { @class = "input100", type = "text", name = "email" })
+                    <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <br />
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <span class="btn-show-pass">
+                        <i class="zmdi zmdi-eye"></i>
+                    </span>
+                    @Html.TextBoxFor(x => x.Password, "", new { @class = "input100", type = "password", name = "pass" })
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Password, null, new { style = "color :red" }) </div>
+                <div class="form-group">
+                    @Html.CheckBoxFor(m => m.Rememberme, new { @class = "form-group" })
+                    <label style="color: grey;">Remember Me</label>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" type="submit">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            }
+            <div class="text-center p-t-20">
+                <span class="txt1">
+                    Don’t have an account?
+                </span>
+
+                <a class="txt2" href="@Url.Action("SignUp", "Users")">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/bootstrap/js/popper.min.js"></script>
+<script src="~/Content/Log/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<link href="~/Content/Log/vendor/select2/select2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/Content/Log/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/Log/js/main.js"></script>
+<script type="text/javascript">
+                                        //$(function () {
+                                        //    alert("#error");
+                                        //})
+</script>

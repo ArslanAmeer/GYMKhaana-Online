@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Payment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center">Payment Details</h2>
+@Html.Partial("~/Views/Payment/_DeleteRecord.cshtml")
+<table class="table table-hover table-striped">
+    <tr class="bg-dark text-center" style="color: white">
+        <th>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaidAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeeDate)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row_@item.Id" class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaidAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeeDate)
+            </td>
+            <td>
+                <a href="#myModal" data-toggle="modal" id="@item.Id" class="hits"><span style="color: red" class="fa fa-remove"></span></a>&nbsp; |
+                <a href="@Url.Action("UpdatePayment","Payment",new{id=item.Id})"><span style="color: green" class="fa fa-edit"></span></a>
+            </td>
+        </tr>
+    }
+</table>
+<input type="hidden" id="hiddenOrderId" />
+@section myscript
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".hits").click(function () {
+                var rid = $(this).attr("id");
+                alert(rid);
+                $("#hiddenOrderId").val(rid);
+                $("#modal-id").model('show');
+            });
+            $("#hit").click(function (event) {
+                var delRecord = $("#hiddenOrderId").val();
+                alert(delRecord);
+                $.ajax({
+                    url: "/Admin/DeletePayment/" + delRecord,
+                    type: "POST",
+                    data: { id: delRecord },
+                    success: function (result) {
+                        $("#modal-id").modal('hide');
+                        $("#row_" + delRecord).remove();
+                    }
+                });
+            });
+        });
+    </script>
+}
