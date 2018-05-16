@@ -448,6 +448,7 @@
     <Content Include="Views\Client\AttandanceDetails.cshtml" />
     <Content Include="Views\VideoandImages\AddVideos.cshtml" />
     <Content Include="Views\VideoandImages\Index.cshtml" />
+    <Content Include="Views\Users\UpdateUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
