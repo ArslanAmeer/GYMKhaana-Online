@@ -61,7 +61,7 @@
                 var delRecord = $("#hiddenOrderId").val();
                 alert(delRecord);
                 $.ajax({
-                    url: "/Admin/DeletePayment/" + delRecord,
+                    url: "/Payment/DeletePayment/" + delRecord,
                     type: "POST",
                     data: { id: delRecord },
                     success: function (result) {

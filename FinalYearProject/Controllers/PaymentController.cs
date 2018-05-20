@@ -69,12 +69,17 @@ namespace FinalYearProject.Controllers
 
         public ActionResult DeletePayment(int id)
         {
+
             Dbcontext db = new Dbcontext();
-            Payment payment = (from c in db.Payments
-                               where c.Id == id
-                               select c).FirstOrDefault();
-            db.Entry(payment).State = EntityState.Deleted;
-            db.SaveChanges();
+            using (db)
+            {
+                Payment payment = (from c in db.Payments
+                                   where c.Id == id
+                                   select c).FirstOrDefault();
+                db.Entry(payment).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
     }
