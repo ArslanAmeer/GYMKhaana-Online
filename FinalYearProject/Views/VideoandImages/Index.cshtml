@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@Html.Partial("~/Views/VideoandImages/_DeleteVideo.cshtml")
 <div class="col-lg-12 mt-2">
     <div class="card">
         <div class="card-header text-center bg-dark lighten-1 white-text">Videos Details Panel</div>
@@ -19,12 +20,12 @@
                 <tbody>
                     @foreach (var v in Model)
                     {
-                        <tr class="text-center">
+                        <tr id="row_@v.Id" class="text-center">
                             <td>@v.Id</td>
                             <td>@v.VideoUrl</td>
                             <td>@v.AddDays</td>
                             <td>
-                                <a href="#myModal"><span class="fa fa-remove text-danger"></span></a>
+                                <a href="#myModal" data-toggle="modal" id="@v.Id" class="hits"><span class="fa fa-remove text-danger"></span></a>
                             </td>
                         </tr>
                     }
@@ -33,3 +34,30 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="hiddenOrderId" />
+@section myscript
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".hits").click(function () {
+                var rid = $(this).attr("id");
+                alert(rid);
+                $("#hiddenOrderId").val(rid);
+                $("#modal-id").model('show');
+            });
+            $("#hit").click(function (event) {
+                var delRecord = $("#hiddenOrderId").val();
+                alert(delRecord);
+                $.ajax({
+                    url: "/VideoandImages/Deletevideo/" + delRecord,
+                    type: "POST",
+                    data: { id: delRecord },
+                    success: function (result) {
+                        $("#modal-id").modal('hide');
+                        $("#row_" + delRecord).remove();
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,18 @@ namespace FinalYearProject.Controllers
                 db.SaveChanges();
             }
             return View();
+        }
+
+        public ActionResult DeleteVideo(int id)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                Video video = (from c in db.Videos where c.Id == id select c).FirstOrDefault();
+                db.Entry(video).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+            return Json("Delete", JsonRequestBehavior.AllowGet);
         }
     }
 }
