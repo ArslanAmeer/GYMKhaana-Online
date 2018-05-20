@@ -15,12 +15,10 @@ namespace FinalYearProject.Controllers
         // GET: Users
         public ActionResult Index()
         {
-
             return View();
         }
         [HttpGet]
         public ActionResult Login()
-
         {
             HttpCookie myCookie = Request.Cookies["logsec"];
             if (myCookie != null)
@@ -36,7 +34,6 @@ namespace FinalYearProject.Controllers
             ViewBag.Action = Request.QueryString["act"];
             return View();
         }
-
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
@@ -75,14 +72,12 @@ namespace FinalYearProject.Controllers
             }
             return View();
         }
-
         [HttpGet]
         public ActionResult SignUp()
         {
             ViewBag.GenderList = ModelHelper.ToSelectItemList(new UserHandler().GetGender());
             return View();
         }
-
         [HttpPost]
         public ActionResult SignUp(FormCollection formdata)
         {
@@ -116,22 +111,18 @@ namespace FinalYearProject.Controllers
                         {
                             string abc = uno + "_" + ++counter +
                                          file.FileName.Substring(file.FileName.LastIndexOf("."));
-
                             string url = "~/Content/Images/" + abc;
                             string path = Request.MapPath(url);
                             u.ImageUrl = abc;
                             file.SaveAs(path);
-
                         }
                     }
-
                     db.Users.Add(u);
+                    db.Entry(u.Role).State = EntityState.Unchanged;
                     db.Entry(u.Gender).State = EntityState.Unchanged;
                     db.SaveChanges();
                     return RedirectToAction("Login", "Users");
                 }
-
-
                 catch (Exception exception)
                 {
                     throw exception;
@@ -141,9 +132,7 @@ namespace FinalYearProject.Controllers
             {
                 return null;
             }
-
         }
-
         public ActionResult Logout()
         {
             Session.Abandon();
@@ -165,8 +154,30 @@ namespace FinalYearProject.Controllers
         [HttpPost]
         public ActionResult UpdateUser(User user)
         {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                int counter = 0;
+                long uno = DateTime.Now.Ticks;
 
-            return View();
+                foreach (string fileName in Request.Files)
+                {
+                    HttpPostedFileBase file = Request.Files[fileName];
+                    if (!string.IsNullOrEmpty(file.FileName))
+                    {
+                        string abc = uno + "_" + ++counter +
+                                     file.FileName.Substring(file.FileName.LastIndexOf("."));
+
+                        string url = "~/Content/Images/" + abc;
+                        string path = Request.MapPath(url);
+                        user.ImageUrl = abc;
+                        file.SaveAs(path);
+                    }
+                }
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return RedirectToAction("UserDetails", "Admin");
         }
     }
 }
