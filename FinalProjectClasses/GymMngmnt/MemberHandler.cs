@@ -25,5 +25,13 @@ namespace FinalProjectClasses.GymMngmnt
                 return (from c in db.Members.Include(v => v.Gender) where c.Id == id select c).FirstOrDefault();
             }
         }
+        public Member GetUserByRollNo(int rollno)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Members where c.RollNo == rollno select c).FirstOrDefault();
+            }
+        }
     }
 }

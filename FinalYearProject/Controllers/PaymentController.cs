@@ -35,8 +35,8 @@ namespace FinalYearProject.Controllers
                 payment.Name = formdata["Name"];
                 payment.FeeDate = Convert.ToDateTime(formdata["FeeDate"]);
                 payment.PaidAmount = Convert.ToInt32(formdata["PaidAmount"]);
-                payment.Member = new Member { Id = Convert.ToInt32(formdata["Id"]) };
                 payment.RollNo = Convert.ToInt32(formdata["RollNo"]);
+                payment.Member = new Member { Id = new MemberHandler().GetUserByRollNo(payment.RollNo).Id };
                 db.Payments.Add(payment);
                 db.Entry(payment.Member).State = EntityState.Unchanged;
                 db.SaveChanges();

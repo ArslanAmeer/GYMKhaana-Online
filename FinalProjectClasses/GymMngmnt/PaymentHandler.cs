@@ -16,7 +16,7 @@ namespace FinalProjectClasses.GymMngmnt
             {
                 return (from v in db.Payments
                         .Include(m => m.Member)
-                       select v).ToList();
+                        select v).ToList();
             }
         }
 

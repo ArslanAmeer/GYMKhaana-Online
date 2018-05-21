@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinalProjectClasses.GymMngmnt;
 
 namespace FinalProjectClasses.UserMgment
 {
@@ -60,5 +61,7 @@ namespace FinalProjectClasses.UserMgment
                         select c).FirstOrDefault();
             }
         }
+
+
     }
 }
