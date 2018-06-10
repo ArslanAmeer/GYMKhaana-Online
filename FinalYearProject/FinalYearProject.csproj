@@ -450,6 +450,7 @@
     <Content Include="Views\VideoandImages\Index.cshtml" />
     <Content Include="Views\Users\UpdateUser.cshtml" />
     <Content Include="Views\VideoandImages\_DeleteVideo.cshtml" />
+    <Content Include="Views\Member\MemberAttendanceDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
