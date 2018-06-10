@@ -33,5 +33,14 @@ namespace FinalProjectClasses.GymMngmnt
                 return (from c in db.Members where c.RollNo == rollno select c).FirstOrDefault();
             }
         }
+
+        public List<Attandance> GetAttandancebyRollNo(int rollNo)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Attandances.Include(m => m.Member).Include(m => m.AttandanceDdl) where c.Member.RollNo == rollNo select c).ToList();
+            }
+        }
     }
 }
