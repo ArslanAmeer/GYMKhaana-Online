@@ -51,10 +51,8 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Your Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Special Work</a>
+                        <a class="dropdown-item" href="">Your Profile</a>
+                        <a class="dropdown-item" href="@Url.Action("Logout","Users")">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -85,6 +83,9 @@
                             <a href="@Url.Action("Index","Payment")"><i class="fa fa-eye fa-lg"></i>&nbsp;Payment-Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("Index","Attandance")"><i class="fa fa-eye fa-lg"></i>&nbsp;Attandance-Details</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
                             <a href="@Url.Action("AddMember","Member")"><i class="fa fa-user fa-lg"></i>&nbsp;Add Member</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
@@ -113,14 +114,14 @@
         <div class="col-lg-9">
             <div class="container-fluid">
                 @RenderBody()
-
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
             </div>
         </div>
     </div>
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
+
 
     <!--===============================================================================================-->
     <script src="~/Content/MDB/js/jquery-3.2.1.min.js"></script>
