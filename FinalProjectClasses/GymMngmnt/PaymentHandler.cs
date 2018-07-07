@@ -32,7 +32,7 @@ namespace FinalProjectClasses.GymMngmnt
             Dbcontext db = new Dbcontext();
             using (db)
             {
-                return (from c in db.Payments.Include(m => m.Member).Include(m => m.FeeDate) where c.Member.RollNo == rollNo select c).ToList();
+                return (from c in db.Payments.Include(m => m.Member) where c.Member.RollNo == rollNo select c).ToList();
             }
         }
 
