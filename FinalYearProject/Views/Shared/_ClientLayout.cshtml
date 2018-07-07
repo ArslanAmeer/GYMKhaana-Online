@@ -77,7 +77,7 @@
                             <a href="@Url.Action("MemberAttendanceDetail","Member",new {rollNo=currentUser.Id})"><i class="fa fa-table fa-lg"></i>&nbsp;Check Attandance</a>
                         </li>
                         <li data-toggle="collapse" data-target="#service">
-                            <a href="#"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
+                            <a href="@Url.Action("MemberPaymentDetail","Payment",new{rollNo=currentUser.Id})"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
                             <a href="#"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
