@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalProjectClasses;
 using FinalProjectClasses.GymMngmnt;
+using FinalProjectClasses.Migrations;
 
 namespace FinalYearProject.Controllers
 {
@@ -81,6 +82,11 @@ namespace FinalYearProject.Controllers
             }
 
             return Json("Delete", JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult MemberPaymentDetail(int rollNo)
+        {
+            List<Payment> payment = new PaymentHandler().GetPaymentbyRollNo(rollNo);
+            return View(payment);
         }
     }
 }
