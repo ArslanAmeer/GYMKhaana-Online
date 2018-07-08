@@ -452,6 +452,7 @@
     <Content Include="Views\VideoandImages\_DeleteVideo.cshtml" />
     <Content Include="Views\Member\MemberAttendanceDetail.cshtml" />
     <Content Include="Views\Payment\MemberPaymentDetail.cshtml" />
+    <Content Include="Views\Users\UserProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
