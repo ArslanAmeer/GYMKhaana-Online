@@ -80,7 +80,7 @@
                             <a href="@Url.Action("MemberPaymentDetail","Payment",new{rollNo=currentUser.Id})"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="#"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
+                            <a href="@Url.Action("UserProfile","Users",new{id=currentUser.Id})"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
                             <a href="@Url.Action("Index","Home")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Watch Video's</a>
