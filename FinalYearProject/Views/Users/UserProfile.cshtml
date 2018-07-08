@@ -16,7 +16,7 @@
     <div class="col-lg-4">
         <div style="margin-left: 40%; margin-top: 7%; padding: 0; width: 221px;">
             <div class="text-center">
-                <img id="blah" src="~/Content/MemberPics/@Model.ImageUrl" alt="" class="img-thumbnail" style="height: 250px; width: 250px; top: 2px;" />
+                <img id="blah" src="~/Content/Images/@Url.Content(Model.ImageUrl)" alt="" class="img-thumbnail" style="height: 250px; width: 250px; top: 2px;" />
                 <h4 class="mt-2" style="font-family:Roboto, sans-serif"> @Html.DisplayFor(model => model.Fullname)</h4>
             </div>
         </div>
