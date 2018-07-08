@@ -179,5 +179,11 @@ namespace FinalYearProject.Controllers
             }
             return RedirectToAction("UserDetails", "Admin");
         }
+        [HttpGet]
+        public ActionResult UserProfile(int id)
+        {
+            User u = new UserHandler().GetUserById(id);
+            return View(u);
+        }
     }
 }
