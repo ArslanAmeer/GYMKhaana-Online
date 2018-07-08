@@ -1,8 +1,55 @@
-﻿
+﻿@model FinalProjectClasses.UserMgment.User
 @{
     ViewBag.Title = "UserProfile";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
 
 <h2>UserProfile</h2>
+<style>
+    .mk {
+        font-weight: 900;
+    }
+</style>
 
+
+<div class="row" style="margin-top: 7%">
+    <div class="col-lg-4">
+        <div style="margin-left: 40%; margin-top: 7%; padding: 0; width: 221px;">
+            <div class="text-center">
+                <img id="blah" src="~/Content/MemberPics/@Model.ImageUrl" alt="" class="img-thumbnail" style="height: 250px; width: 250px; top: 2px;" />
+                <h4 class="mt-2" style="font-family:Roboto, sans-serif"> @Html.DisplayFor(model => model.Fullname)</h4>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="col-lg-8 mt-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Loginid)&nbsp;:&nbsp;@Html.DisplayFor(model => model.Loginid, new { @class = "mk" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password)&nbsp;:&nbsp;@Html.DisplayFor(model => model.Password, new { @class = "mk" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword)&nbsp;:&nbsp;@Html.DisplayFor(model => model.ConfirmPassword, new { @class = "mk" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)&nbsp;:&nbsp;@Html.DisplayFor(model => model.Email, new { @class = "mk" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City)&nbsp;:&nbsp;@Html.DisplayFor(model => model.City, new { @class = "mk" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.State)&nbsp;:&nbsp;@Html.DisplayFor(model => model.State, new { @class = "mk" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FullAddress)&nbsp;:&nbsp;@Html.DisplayFor(model => model.FullAddress, new { @class = "mk" })
+        </div>
+    </div>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
