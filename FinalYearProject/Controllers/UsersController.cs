@@ -185,5 +185,16 @@ namespace FinalYearProject.Controllers
             User u = new UserHandler().GetUserById(id);
             return View(u);
         }
+
+        [HttpGet]
+        public ActionResult UserProfileSetting(int id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UserProfileSetting(User user)
+        {
+            return View();
+        }
     }
 }
