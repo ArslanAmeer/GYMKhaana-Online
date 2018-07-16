@@ -190,6 +190,7 @@
     <Content Include="Content\MDB\js\mdb.js" />
     <Content Include="Content\MDB\js\mdb.min.js" />
     <Content Include="Content\MDB\js\popper.min.js" />
+    <Content Include="Content\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
