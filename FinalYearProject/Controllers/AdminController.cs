@@ -46,5 +46,12 @@ namespace FinalYearProject.Controllers
             db.SaveChanges();
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public ActionResult AdminProfile(int id)
+        {
+            User u = new UserHandler().GetUserById(id);
+            return View(u);
+        }
+
     }
 }
