@@ -455,6 +455,7 @@
     <Content Include="Views\Payment\MemberPaymentDetail.cshtml" />
     <Content Include="Views\Users\UserProfile.cshtml" />
     <Content Include="Views\Users\UserProfileSetting.cshtml" />
+    <Content Include="Views\Admin\AdminProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
