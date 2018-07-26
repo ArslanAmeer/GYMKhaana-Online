@@ -3,109 +3,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<link href="~/Content/sb-admin-2.min.css" rel="stylesheet" />
 <h2>Index</h2>
+<div class="row">
 
-<div class="row" style="padding:inherit">
-    <div class="col-lg-3 col-md-6 ">
-        <div class="panel panel-red">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-shopping-bag fa-4x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge">
-                            9
-                            @*@Html.Action("GetOrderByCount", "Contact")*@
-                        </div>
-                        <div>New Orders</div>
-                    </div>
-                </div>
-            </div>
-            @*<a href="@Url.Action("Orders","Admin")">*@
-            <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-            </div>
-            @*</a>*@
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-users fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge">
-                            23
-                            @*@Html.Action("GetUserByCount", "Contact")*@
-                        </div>
-                        <div>Total Users!</div>
-                    </div>
-                </div>
-            </div>
-            @*<a href="@Url.Action("Customer","Admin")">*@
-            <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-            </div>
-            @*</a>*@
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-users fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge">
-                            45
-                            @*@Html.Action("GetUserByCount", "Contact")*@
-                        </div>
-                        <div>Total Users!</div>
-                    </div>
-                </div>
-            </div>
-            @*<a href="@Url.Action("Customer","Admin")">*@
-            <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-            </div>
-            @*</a>*@
-        </div>
-    </div> <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-users fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge">
-                            46
-                            @*@Html.Action("GetUserByCount", "Contact")*@
-                        </div>
-                        <div>Total Users!</div>
-                    </div>
-                </div>
-            </div>
-            @*<a href="@Url.Action("Customer","Admin")">*@
-            <div class="panel-footer">
-                <span class="pull-left">View Details</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div class="clearfix"></div>
-            </div>
-            @*</a>*@
-        </div>
-    </div>
 
-</div>
+    <div class="col-lg-3">
+        <div class="card box">
+            <a href="@Url.Action("UserDetails", "Admin")">
+                <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
+                <h3 class="text-center">Users</h3>
+            </a>
+        </div>
+    </div>
 
