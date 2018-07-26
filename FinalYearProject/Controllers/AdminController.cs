@@ -53,5 +53,17 @@ namespace FinalYearProject.Controllers
             return View(u);
         }
 
+        public int GetUserCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Users select c).Count();
+            }
+
+        }
+
+
+
     }
 }
