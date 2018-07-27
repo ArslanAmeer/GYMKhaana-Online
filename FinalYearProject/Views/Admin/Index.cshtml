@@ -4,30 +4,46 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <style>
+
     .box {
-        width: 200px;
-        height: 190px;
+        width: 230px;
+        height: 180px;
         padding: 50px;
+        background-color: violet;
     }
-    .box h2{
-        margin-left:25%;
+
+    .box, a:hover {
+        text-decoration-line: none;
+        font-weight: bold;
     }
+        /*.box, a:hover {
+        width: 200px;
+        height: 180px;
+        padding: 50px;
+        background-color: violet;
+        text-decoration-line: none;
+    }*/
+
+        .box h2 {
+            width: 100%;
+            margin-left: 25%;
+        }
 </style>
 <h2>Index</h2>
 <div class="row">
     <div class="col-lg-3">
         <div class="card box">
             <a href="@Url.Action("UserDetails", "Admin")">
-                <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
-                <h3 class="text-center">Users</h3>
+                <h2><span class="fa fa-users fa-lg"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
+                <h4 class="text-center">Users</h4>
             </a>
         </div>
     </div>
     <div class="col-lg-3">
         <div class="card box">
-            <a href="@Url.Action("UserDetails", "Admin")">
-                <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
-                <h3 class="text-center">Users</h3>
+            <a href="@Url.Action("Index", "Member")">
+                <h2><span class="fa fa-male fa-lg"></span><span class="ml-3">@Html.Action("GetMemberCount", "Admin")</span> </h2>
+                <h4 class="text-center">Members</h4>
             </a>
         </div>
     </div>
@@ -48,4 +64,3 @@
         </div>
     </div>
 </div>
-
