@@ -1,11 +1,9 @@
-﻿using System;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.UserMgment;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.UserMgment;
 
 namespace FinalYearProject.Controllers
 {
@@ -59,6 +57,15 @@ namespace FinalYearProject.Controllers
             using (db)
             {
                 return (from c in db.Users select c).Count();
+            }
+
+        }
+        public int GetMemberCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Members select c).Count();
             }
 
         }
