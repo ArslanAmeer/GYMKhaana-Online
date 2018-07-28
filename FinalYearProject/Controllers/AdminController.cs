@@ -69,6 +69,15 @@ namespace FinalYearProject.Controllers
             }
 
         }
+        public int GetPaymentCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Members select c).Count();
+            }
+
+        }
 
 
 
