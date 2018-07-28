@@ -7,20 +7,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     .box {
-        width: 230px;
+        width: 240px;
         height: 180px;
         padding: 50px;
         background-color: violet;
@@ -64,7 +52,7 @@
     <div class="col-lg-3">
         <div class="card box">
             <a href="@Url.Action("Index", "Payment")">
-                <h2><span class="fa fa-dollar"></span><span class="ml-3">@Html.Action("GetPaymentCount", "Admin")</span> </h2>
+                <h2><span class="fa fa-dollar fa-lg"></span><span class="ml-3">@Html.Action("GetPaymentCount", "Admin")</span> </h2>
                 <h3 class="text-center">Payment</h3>
             </a>
         </div>
@@ -72,16 +60,24 @@
     <div class="col-lg-3">
         <div class="card box">
             <a href="@Url.Action("Index", "VideoandImages")">
-                <h2><span class="fa fa-youtube-play"></span><span class="ml-3">@Html.Action("GetVideosCount", "Admin")</span> </h2>
+                <h2><span class="fa fa-youtube-play fa-lg"></span><span class="ml-3">@Html.Action("GetVideosCount", "Admin")</span> </h2>
                 <h3 class="text-center">Video's</h3>
             </a>
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 mt-2">
         <div class="card box">
             <a href="@Url.Action("Index", "Attandance")">
-                <h2><span class="fa fa-youtube-play"></span><span class="ml-3">@Html.Action("GetAttandanceCount", "Admin")</span> </h2>
-                <h3 class="text-center">Video's</h3>
+                <h2><span class="fa fa-list fa-lg"></span><span class="ml-3">@Html.Action("GetAttandanceCount", "Admin")</span> </h2>
+                <h3 class="text-center">Attandanc</h3>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 mt-2">
+        <div class="card box">
+            <a href="@Url.Action("Index", "Attandance")">
+                <h2><span class="fa fa-list fa-lg"></span><span class="ml-3">@Html.Action("GetAttandanceCount", "Admin")</span> </h2>
+                <h3 class="text-center">Attandanc</h3>
             </a>
         </div>
     </div>
