@@ -5,6 +5,12 @@
 }
 <style>
 
+
+
+
+
+
+
     .box {
         width: 230px;
         height: 180px;
@@ -49,15 +55,15 @@
     </div>
     <div class="col-lg-3">
         <div class="card box">
-            <a href="@Url.Action("UserDetails", "Admin")">
-                <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
-                <h3 class="text-center">Users</h3>
+            <a href="@Url.Action("Index", "Payment")">
+                <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetPaymentCount", "Admin")</span> </h2>
+                <h3 class="text-center">Payment</h3>
             </a>
         </div>
     </div>
     <div class="col-lg-3">
         <div class="card box">
-            <a href="@Url.Action("UserDetails", "Admin")">
+            <a href="@Url.Action("Index", "VideoandImages")">
                 <h2><span class="fa fa-user"></span><span class="ml-3">@Html.Action("GetUserCount", "Admin")</span> </h2>
                 <h3 class="text-center">Users</h3>
             </a>
