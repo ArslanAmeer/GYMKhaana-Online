@@ -78,6 +78,24 @@ namespace FinalYearProject.Controllers
             }
 
         }
+        public int GetAttandanceCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Attandances select c).Count();
+            }
+
+        }
+        public int GetVideosCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Videos select c).Count();
+            }
+
+        }
 
 
 
