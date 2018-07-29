@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "SubmitMessage";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+<h2>SubmitMessage</h2>
+<section>
+    <style>
+
+        .form-dark .font-small {
+            font-size: 0.8rem;
+        }
+
+        .form-dark [type="radio"] + label,
+        .form-dark [type="checkbox"] + label {
+            font-size: 0.8rem;
+        }
+
+            .form-dark [type="checkbox"] + label:before {
+                top: 2px;
+                width: 15px;
+                height: 15px;
+            }
+
+        .form-dark .md-form label {
+            color: #fff;
+        }
+
+        .form-dark input[type=text]:focus:not([readonly]) {
+            border-bottom: 1px solid #00C851;
+            -webkit-box-shadow: 0 1px 0 0 #00C851;
+            box-shadow: 0 1px 0 0 #00C851;
+        }
+
+            .form-dark input[type=text]:focus:not([readonly]) + label {
+                color: #fff;
+            }
+
+        .form-dark input[type=password]:focus:not([readonly]) {
+            border-bottom: 1px solid #00C851;
+            -webkit-box-shadow: 0 1px 0 0 #00C851;
+            box-shadow: 0 1px 0 0 #00C851;
+        }
+
+            .form-dark input[type=password]:focus:not([readonly]) + label {
+                color: #fff;
+            }
+
+        .form-dark input[type="checkbox"] + label:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 17px;
+            height: 17px;
+            z-index: 0;
+            border: 1.5px solid #fff;
+            border-radius: 1px;
+            margin-top: 2px;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+        }
+
+        .form-dark input[type="checkbox"]:checked + label:before {
+            top: -4px;
+            left: -3px;
+            width: 12px;
+            height: 22px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: transparent #00c851 #00c851 transparent;
+            -webkit-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+            -webkit-backface-visibility: hidden;
+            -webkit-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+
+        .form-dark textarea.md-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid #00C851;
+            -webkit-box-shadow: 0 1px 0 0 #00C851;
+            box-shadow: 0 1px 0 0 #00C851;
+        }
+
+
+        .form-gradient .font-small {
+            font-size: 0.8rem;
+        }
+
+        .form-gradient .header {
+            border-top-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+        }
+
+        .form-gradient input[type=text]:focus:not([readonly]) {
+            border-bottom: 1px solid #fd9267;
+            -webkit-box-shadow: 0 1px 0 0 #fd9267;
+            box-shadow: 0 1px 0 0 #fd9267;
+        }
+
+            .form-gradient input[type=text]:focus:not([readonly]) + label {
+                color: #4f4f4f;
+            }
+
+        .form-gradient input[type=password]:focus:not([readonly]) {
+            border-bottom: 1px solid #fd9267;
+            -webkit-box-shadow: 0 1px 0 0 #fd9267;
+            box-shadow: 0 1px 0 0 #fd9267;
+        }
+
+            .form-gradient input[type=password]:focus:not([readonly]) + label {
+                color: #4f4f4f;
+            }
+
+        .form-gradient textarea.md-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid #fd9267;
+            -webkit-box-shadow: 0 1px 0 0 #fd9267;
+            box-shadow: 0 1px 0 0 #fd9267;
+        }
+    </style>
+    <!-- Grid row -->
+    <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-12 col-lg-6 col-xl-5 mb-r">
+            <section class="form-dark">
+                <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');">
+                    <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                        <!--Header-->
+                        <div class="text-center">
+                            <h3 class="white-text mb-5 mt-4 font-weight-bold"><strong>CONTACT</strong> <a class="green-text font-weight-bold"><strong> US</strong></a></h3>
+                        </div>
+                        <!--Body-->
+                        <div class="md-form">
+                            <input type="text" id="Form-email5" class="form-control white-text">
+                            <label for="Form-email5" class="">Your name</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" id="Form-pass5" class="form-control">
+                            <label for="Form-pass5">Your mail</label>
+                        </div>
+                        <div class="md-form mb-5">
+                            <textarea type="text" id="message5" name="message5" rows="2" class="form-control md-textarea white-text"></textarea>
+                            <label for="message5" class="">Your message</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="checkbox7">
+                                <label for="checkbox7" class="form-check-label white-text">Subscribe to our<a href="#" class="green-text font-weight-bold"> newsletter?</a></label>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center">
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1 waves-effect waves-light">Send message</button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        @*<div class="col-md-12 col-lg-6 col-xl-5 mx-auto">
+
+                <section class="form-gradient">
+
+                    <div class="card">
+
+                        <!--Header-->
+                        <div class="header pt-3 peach-gradient">
+
+                            <div class="row d-flex justify-content-center">
+                                <h3 class="white-text mb-3 pt-3 font-weight-bold">Contact Us</h3>
+                            </div>
+
+                            <div class="row mt-2 mb-3 d-flex justify-content-center">
+                                <!--Facebook-->
+                                <a class="icons-sm fb-ic mx-2"><i class="fa fa-facebook white-text fa-lg"> </i></a>
+                                <!--Twitter-->
+                                <a class="icons-sm tw-ic mx-2"><i class="fa fa-twitter white-text fa-lg"> </i></a>
+                                <!--Google +-->
+                                <a class="icons-sm gplus-ic mx-2"><i class="fa fa-google-plus white-text fa-lg"> </i></a>
+                            </div>
+
+                        </div>
+                        <!--Header-->
+
+                        <div class="card-body mx-4 mt-4">
+
+                            <!--Body-->
+                            <div class="md-form">
+                                <input type="text" id="Form-name3" class="form-control">
+                                <label for="Form-email3">Your name</label>
+                            </div>
+
+                            <div class="md-form">
+                                <input type="text" id="Form-mail3" class="form-control">
+                                <label for="Form-pass3">Your mail</label>
+                            </div>
+
+                            <div class="md-form">
+                                <textarea type="text" id="message5" name="message5" rows="2" class="form-control md-textarea"></textarea>
+                                <label for="message5" class="">Your message</label>
+                                <div class="form-group">
+                                </div>
+                            </div>
+
+                            <!--Grid row-->
+                            <div class="row d-flex mb-4">
+
+                                <!--Grid column-->
+                                <div class="col-md-1 col-md-5 d-flex  ml-auto">
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-grey btn-rounded z-depth-1a waves-effect waves-light">Send</button>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+
+                            </div>
+                            <!--Grid row-->
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>*@
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+</section>
