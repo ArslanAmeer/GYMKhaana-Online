@@ -17,7 +17,7 @@ namespace FinalYearProject.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult SubmitMessage(Contact contact)
         {
             Dbcontext db = new Dbcontext();
