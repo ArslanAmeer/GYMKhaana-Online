@@ -119,6 +119,10 @@
     <Compile Include="Migrations\201805080954592_AddingDays.Designer.cs">
       <DependentUpon>201805080954592_AddingDays.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807290611025_ContactTableAdded.cs" />
+    <Compile Include="Migrations\201807290611025_ContactTableAdded.Designer.cs">
+      <DependentUpon>201807290611025_ContactTableAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMgment\Gender.cs" />
@@ -175,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805080954592_AddingDays.resx">
       <DependentUpon>201805080954592_AddingDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807290611025_ContactTableAdded.resx">
+      <DependentUpon>201807290611025_ContactTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
