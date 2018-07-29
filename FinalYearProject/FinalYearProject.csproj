@@ -387,6 +387,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AttandanceController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ImagesGalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -456,6 +457,7 @@
     <Content Include="Views\Users\UserProfile.cshtml" />
     <Content Include="Views\Users\UserProfileSetting.cshtml" />
     <Content Include="Views\Admin\AdminProfile.cshtml" />
+    <Content Include="Views\Contact\SuccessMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
