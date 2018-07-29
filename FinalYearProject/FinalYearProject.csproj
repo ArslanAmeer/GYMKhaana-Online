@@ -458,6 +458,7 @@
     <Content Include="Views\Users\UserProfileSetting.cshtml" />
     <Content Include="Views\Admin\AdminProfile.cshtml" />
     <Content Include="Views\Contact\SuccessMessage.cshtml" />
+    <Content Include="Views\Contact\SubmitMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
