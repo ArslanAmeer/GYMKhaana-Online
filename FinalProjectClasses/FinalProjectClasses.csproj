@@ -51,6 +51,7 @@
     <Compile Include="GymMngmnt\Attandance.cs" />
     <Compile Include="GymMngmnt\AttandanceDDL.cs" />
     <Compile Include="GymMngmnt\AttandanceHandler.cs" />
+    <Compile Include="GymMngmnt\Contact.cs" />
     <Compile Include="GymMngmnt\Image.cs" />
     <Compile Include="GymMngmnt\Member.cs" />
     <Compile Include="GymMngmnt\MemberHandler.cs" />

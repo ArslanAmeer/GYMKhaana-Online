@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
-using FinalProjectClasses.GymMngmnt;
+﻿using FinalProjectClasses.GymMngmnt;
 using FinalProjectClasses.UserMgment;
+using System.Data.Entity;
 
 namespace FinalProjectClasses
 {
@@ -27,6 +21,8 @@ namespace FinalProjectClasses
         public DbSet<Image> Images { get; set; }
         public DbSet<AttandanceDDL> AttandanceDdls { get; set; }
         public DbSet<Attandance> Attandances { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
 
     }
 }
