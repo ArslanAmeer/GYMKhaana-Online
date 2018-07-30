@@ -25,7 +25,7 @@ namespace FinalYearProject.Controllers
             {
                 db.Contacts.Add(contact);
                 db.SaveChanges();
-                return RedirectToAction("", "");
+                return RedirectToAction("SuccessMessage", "Contact");
             }
         }
 
