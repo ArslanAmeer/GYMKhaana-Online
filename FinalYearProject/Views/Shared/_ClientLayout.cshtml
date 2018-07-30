@@ -30,13 +30,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="@Url.Action("Index","Client")"><span class="fa fa-home fa-lg"></span>&nbsp;Home <span class="sr-only">(current)</span></a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#"><span class="fa fa-image"></span>&nbsp;Images</a>
                 </li>
@@ -44,11 +42,9 @@
                     <a class="nav-link" href="@Url.Action("Index","Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
                 </li>
                 <li class="nav-item dropdown">
-
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="fa fa-user"></span> User
                     </a>
-
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="@Url.Action("UserProfile","Users",new{id=currentUser.Id})"><span class="fa fa-user"></span>&nbsp; Your Profile</a>
                         <a class="dropdown-item" href="@Url.Action("UserProfileSetting","Users",new {id=currentUser.Id})"><span class="fa fa-cog"></span>&nbsp; Profile Setting</a>
@@ -86,6 +82,9 @@
                             <a href="@Url.Action("Index","Home")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Watch Video's</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("SubmitMessage","Contact")"><i class="fa fa-envelope fa-lg"></i>&nbsp;Watch Video's</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
                             <a href="#"><i class="fa fa-image fa-lg"></i>&nbsp;Image Gallery </a>
                         </li>
                     </ul>
@@ -102,8 +101,6 @@
             </div>
         </div>
     </div>
-
-
     <!--===============================================================================================-->
     <script src="~/Content/MDB/js/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
@@ -114,7 +111,6 @@
     <!--===============================================================================================-->
     <script src="~/Content/MDB/js/mdb.min.js"></script>
     <!--===============================================================================================-->
-
     @RenderSection("myscript", required: false)
 </body>
 </html>
