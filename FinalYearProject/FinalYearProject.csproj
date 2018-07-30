@@ -157,6 +157,7 @@
     <Content Include="Content\Assets\vendor\select2\select2.js" />
     <Content Include="Content\Assets\vendor\select2\select2.min.css" />
     <Content Include="Content\Assets\vendor\select2\select2.min.js" />
+    <Content Include="Content\Images\new-instagram-color-background-latest.jpg" />
     <Content Include="Content\MDB\css\bootstrap.css" />
     <Content Include="Content\MDB\css\bootstrap.min.css" />
     <Content Include="Content\MDB\css\mdb.css" />
