@@ -1,5 +1,6 @@
 ﻿using FinalProjectClasses;
 using FinalProjectClasses.GymMngmnt;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
@@ -9,7 +10,8 @@ namespace FinalYearProject.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            List<Contact> contact = new MemberHandler().GetAllMessages();
+            return View(contact);
         }
         [HttpGet]
         public ActionResult SubmitMessage()
