@@ -96,6 +96,16 @@ namespace FinalYearProject.Controllers
             }
 
         }
+        public int GetcontactCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Contacts select c).Count();
+            }
+
+        }
+
 
 
 
