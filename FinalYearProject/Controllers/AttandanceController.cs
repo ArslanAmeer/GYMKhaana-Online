@@ -1,12 +1,11 @@
-﻿using System;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
+using FinalYearProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.GymMngmnt;
-using FinalYearProject.Models;
 
 namespace FinalYearProject.Controllers
 {
@@ -75,6 +74,18 @@ namespace FinalYearProject.Controllers
             }
 
         }
+
+        public ActionResult DeleteAttandance(int id)
+        {
+            Dbcontext db = new Dbcontext();
+            Attandance p = (from c in db.Attandances
+                            where c.Id == id
+                            select c).FirstOrDefault();
+            db.Entry(p).State = EntityState.Deleted;
+            db.SaveChanges();
+            return Json("Delete", JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
 //List<Member> members = new List<Member>();
