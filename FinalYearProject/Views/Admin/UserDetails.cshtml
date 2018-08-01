@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<FinalProjectClasses.UserMgment.User>
-
 @{
     ViewBag.Title = "UserDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @Html.Partial("~/Views/Admin/_DeleteUser.cshtml")
-
 <div class="ml-4">
     <h2>UserDetails</h2>
     <table class=" table table-responsive table-hover table-bordered table-striped">
@@ -57,7 +55,6 @@
             </th>
             <th>Action</th>
         </tr>
-
         @foreach (var item in Model)
         {
             <tr id="row_@item.Id" class="text-center">
@@ -121,13 +118,11 @@
         $(function () {
             $(".hits").click(function () {
                 var rid = $(this).attr("id");
-                alert(rid);
                 $("#hiddenOrderId").val(rid);
                 $("#modal-id").model('show');
             });
             $("#hit").click(function (event) {
                 var delRecord = $("#hiddenOrderId").val();
-                alert(delRecord);
                 $.ajax({
                     url: "/Admin/DeleteUesr/" + delRecord,
                     type: "POST",
