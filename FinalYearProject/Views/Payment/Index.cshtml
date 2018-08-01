@@ -53,13 +53,13 @@
         $(function () {
             $(".hits").click(function () {
                 var rid = $(this).attr("id");
-                alert(rid);
+
                 $("#hiddenOrderId").val(rid);
                 $("#modal-id").model('show');
             });
             $("#hit").click(function (event) {
                 var delRecord = $("#hiddenOrderId").val();
-                alert(delRecord);
+
                 $.ajax({
                     url: "/Payment/DeletePayment/" + delRecord,
                     type: "POST",
