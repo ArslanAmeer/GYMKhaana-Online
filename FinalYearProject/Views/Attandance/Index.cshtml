@@ -1,38 +1,77 @@
 ﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Attandance>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<p>
-    @Html.ActionLink("Create New", "MarkAttandance")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AttandanceDdl.Name)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AttandanceDdl.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
+@Html.Partial("~/Views/Attandance/_DeleteAttandance.cshtml")
+<div class="card mt-2">
+    <div class="card-header text-center bg-dark lighten-1 white-text">Attandance Details</div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr class="text-dark">
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AttandanceDdl.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Member.FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Member.RollNo)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AttandanceDdl.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Member.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Member.RollNo)
+                        </td>
+                        <td>
+                            <a href="#basicExampleModal2" data-toggle="modal" id="@item.Id" class="hits"><span style="color: red" class="fa fa-remove"></span></a>&nbsp;|
+                            <a href="@Url.Action("UpdateUser","Users",new {id=item.Id})"><span style="color: green" class="fa fa-edit"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<input type="hidden" id="hiddenOrderId" />
+@section myscript
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".hits").click(function () {
+                var rid = $(this).attr("id");
+                $("#hiddenOrderId").val(rid);
+                $("#modal-id").model('show');
+            });
+            $("#hit").click(function (event) {
+                var delRecord = $("#hiddenOrderId").val();
+                $.ajax({
+                    url: "/Attandance/DeleteAttandance/" + delRecord,
+                    type: "POST",
+                    data: { id: delRecord },
+                    success: function (result) {
+                        $("#modal-id").modal('hide');
+                        $("#row_" + delRecord).remove();
+                    }
+                });
+            });
+        });</script>
+}

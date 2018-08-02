@@ -1,5 +1,4 @@
 ﻿@using FinalProjectClasses.UserMgment
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,29 +31,24 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index","Client")"><span class="fa fa-home fa-lg"></span>&nbsp;Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="@Url.Action("Index", "Client")"><span class="fa fa-home fa-lg"></span>&nbsp;Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><span class="fa fa-image"></span>&nbsp;Images</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index","Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
+                    <a class="nav-link" href="@Url.Action("Index", "Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
                 </li>
                 <li class="nav-item dropdown">
-
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="fa fa-user"></span> User
                     </a>
-
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Your Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Special Work</a>
+                        @*<a class="dropdown-item" href="@Url.Action("AdminProfile","Admin",new{id=currentUser.Id})"><span class="fa fa-user"></span>&nbsp;Your Profile</a>*@
+                        <a class="dropdown-item" href="@Url.Action("Logout", "Users")"><span class="fa fa-sign-out"></span>&nbsp;Logout</a>
                     </div>
                 </li>
             </ul>
@@ -75,36 +69,41 @@
                 <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
                 <div class="menu-list">
                     <ul id="menu-content" class="menu-content collapse">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("Index","Admin")"><span class="fa fa-tachometer fa-lg"></span>&nbsp; DashBoard <span class="sr-only">(current)</span></a>
+                        </li>
                         <li data-toggle="collapse" data-target="#products">
-                            <a href="@Url.Action("UserDetails","Admin")"><i class="fa fa-users fa-lg"></i>&nbsp;User Details</a>
+                            <a href="@Url.Action("UserDetails", "Admin")"><i class="fa fa-users fa-lg"></i>&nbsp;User Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#service">
-                            <a href="@Url.Action("SubmitPayment","Payment")"><i class="fa fa-dollar fa-lg"></i>&nbsp;Fee-Payment</a>
+                            <a href="@Url.Action("SubmitPayment", "Payment")"><i class="fa fa-dollar fa-lg"></i>&nbsp;Fee-Payment</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("Index","Payment")"><i class="fa fa-eye fa-lg"></i>&nbsp;Payment-Details</a>
+                            <a href="@Url.Action("Index", "Payment")"><i class="fa fa-eye fa-lg"></i>&nbsp;Payment-Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("AddMember","Member")"><i class="fa fa-user fa-lg"></i>&nbsp;Add Member</a>
+                            <a href="@Url.Action("Index", "Attandance")"><i class="fa fa-eye fa-lg"></i>&nbsp;Attandance-Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("Index","Member")"><i class="fa fa-eye fa-lg"></i>&nbsp;See Member Details</a>
+                            <a href="@Url.Action("AddMember", "Member")"><i class="fa fa-user fa-lg"></i>&nbsp;Add Member</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("AddVideos","VideoandImages")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Add New Video's</a>
+                            <a href="@Url.Action("Index", "Member")"><i class="fa fa-eye fa-lg"></i>&nbsp;See Member Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("Index","VideoandImages")"><i class="fa fa-file-video-o fa-lg"></i>&nbsp;Video Details</a>
+                            <a href="@Url.Action("AddVideos", "VideoandImages")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Add New Video's</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("AddVideos","VideoandImages")"><i class="fa fa-image fa-lg"></i>&nbsp;Add Images</a>
-                        </li>
-
-                        <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("SearchStudent","Attandance")"><i class="fa fa-search fa-lg"></i>&nbsp;Search Members</a>
+                            <a href="@Url.Action("Index", "VideoandImages")"><i class="fa fa-file-video-o fa-lg"></i>&nbsp;Video Details</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="#"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;Contacts</a>
+                            <a href="@Url.Action("AddVideos", "VideoandImages")"><i class="fa fa-image fa-lg"></i>&nbsp;Add Images</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("SearchStudent", "Attandance")"><i class="fa fa-search fa-lg"></i>&nbsp;Search Members</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("Index","Contact")"><i class="fa fa-envelope-o fa-lg"></i>&nbsp;Contacts</a>
                         </li>
                     </ul>
                 </div>
@@ -113,15 +112,13 @@
         <div class="col-lg-9">
             <div class="container-fluid">
                 @RenderBody()
-
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
             </div>
         </div>
     </div>
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
-
     <!--===============================================================================================-->
     <script src="~/Content/MDB/js/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
@@ -132,7 +129,6 @@
     <!--===============================================================================================-->
     <script src="~/Content/MDB/js/mdb.min.js"></script>
     <!--===============================================================================================-->
-
     @RenderSection("myscript", required: false)
 </body>
 </html>

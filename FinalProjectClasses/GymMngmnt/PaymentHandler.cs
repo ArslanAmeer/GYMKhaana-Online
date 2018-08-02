@@ -27,6 +27,14 @@ namespace FinalProjectClasses.GymMngmnt
                 return (from c in db.Payments where id == c.Id select c).FirstOrDefault();
             }
         }
+        public List<Payment> GetPaymentbyRollNo(int rollNo)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Payments.Include(m => m.Member) where c.Member.RollNo == rollNo select c).ToList();
+            }
+        }
 
     }
 }

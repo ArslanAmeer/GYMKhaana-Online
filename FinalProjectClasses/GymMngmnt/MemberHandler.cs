@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProjectClasses.GymMngmnt
 {
@@ -31,6 +28,24 @@ namespace FinalProjectClasses.GymMngmnt
             using (db)
             {
                 return (from c in db.Members where c.RollNo == rollno select c).FirstOrDefault();
+            }
+        }
+
+        public List<Attandance> GetAttandancebyRollNo(int rollNo)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Attandances.Include(m => m.Member).Include(m => m.AttandanceDdl) where c.Member.RollNo == rollNo select c).ToList();
+            }
+        }
+
+        public List<Contact> GetAllMessages()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Contacts select c).ToList();
             }
         }
     }

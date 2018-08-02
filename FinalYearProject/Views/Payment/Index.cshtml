@@ -1,10 +1,8 @@
 ﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Payment>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <h2 class="text-center">Payment Details</h2>
 @Html.Partial("~/Views/Payment/_DeleteRecord.cshtml")
 <table class="table table-hover table-striped">
@@ -23,7 +21,6 @@
         </th>
         <th>Action</th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr id="row_@item.Id" class="text-center">
@@ -40,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.FeeDate)
             </td>
             <td>
-                <a href="#myModal" data-toggle="modal" id="@item.Id" class="hits"><span style="color: red" class="fa fa-remove"></span></a>&nbsp; |
+                <a href="#basicExampleModal" data-toggle="modal" id="@item.Id" class="hits"><span style="color: red" class="fa fa-remove"></span></a>&nbsp; |
                 <a href="@Url.Action("UpdatePayment","Payment",new{id=item.Id})"><span style="color: green" class="fa fa-edit"></span></a>
             </td>
         </tr>
@@ -53,13 +50,13 @@
         $(function () {
             $(".hits").click(function () {
                 var rid = $(this).attr("id");
-                alert(rid);
+
                 $("#hiddenOrderId").val(rid);
                 $("#modal-id").model('show');
             });
             $("#hit").click(function (event) {
                 var delRecord = $("#hiddenOrderId").val();
-                alert(delRecord);
+
                 $.ajax({
                     url: "/Payment/DeletePayment/" + delRecord,
                     type: "POST",

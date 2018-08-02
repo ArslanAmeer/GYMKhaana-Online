@@ -1,5 +1,4 @@
 ﻿@model FinalProjectClasses.UserMgment.User
-
 @{
     ViewBag.Title = "SignUp";
     Layout = null;
@@ -23,7 +22,6 @@
 <!--===============================================================================================-->
 <link href="~/Content/Assets/css/main.css" rel="stylesheet" />
 <link href="~/Content/Assets/css/util.css" rel="stylesheet" />
-
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
@@ -82,7 +80,7 @@
                 <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Valid CNIC">
-                    @Html.TextBoxFor(x => x.Cnic, "", new { @class = "input100", type = "text", name = "Cnic" })
+                    @Html.TextBoxFor(x => x.Cnic, "", new { @class = "input100", type = "number", name = "Cnic" })
                     <span class="focus-input100" data-placeholder="CNIC"></span>
                 </div>
                 <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
@@ -94,7 +92,7 @@
                 <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Date of Birth">
-                    @Html.TextBoxFor(x => x.DateofBirth, "", new { @class = "input100", type = "text", name = "DateofBirth" })
+                    @Html.TextBoxFor(x => x.DateofBirth, "", new { @class = "input100", type = "date", name = "DateofBirth" })
                     <span class="focus-input100" data-placeholder="Date-of-Birth"></span>
                 </div>
                 <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
@@ -195,4 +193,3 @@
 <script src="~/Content/Assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="~/Content/Assets/js/main.js"></script>
-

@@ -157,6 +157,7 @@
     <Content Include="Content\Assets\vendor\select2\select2.js" />
     <Content Include="Content\Assets\vendor\select2\select2.min.css" />
     <Content Include="Content\Assets\vendor\select2\select2.min.js" />
+    <Content Include="Content\Images\new-instagram-color-background-latest.jpg" />
     <Content Include="Content\MDB\css\bootstrap.css" />
     <Content Include="Content\MDB\css\bootstrap.min.css" />
     <Content Include="Content\MDB\css\mdb.css" />
@@ -190,6 +191,7 @@
     <Content Include="Content\MDB\js\mdb.js" />
     <Content Include="Content\MDB\js\mdb.min.js" />
     <Content Include="Content\MDB\js\popper.min.js" />
+    <Content Include="Content\sb-admin-2.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -386,6 +388,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AttandanceController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ImagesGalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -450,6 +453,15 @@
     <Content Include="Views\VideoandImages\Index.cshtml" />
     <Content Include="Views\Users\UpdateUser.cshtml" />
     <Content Include="Views\VideoandImages\_DeleteVideo.cshtml" />
+    <Content Include="Views\Member\MemberAttendanceDetail.cshtml" />
+    <Content Include="Views\Payment\MemberPaymentDetail.cshtml" />
+    <Content Include="Views\Users\UserProfile.cshtml" />
+    <Content Include="Views\Users\UserProfileSetting.cshtml" />
+    <Content Include="Views\Admin\AdminProfile.cshtml" />
+    <Content Include="Views\Contact\SuccessMessage.cshtml" />
+    <Content Include="Views\Contact\SubmitMessage.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Attandance\_DeleteAttandance.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

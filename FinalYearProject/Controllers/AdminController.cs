@@ -1,11 +1,9 @@
-﻿using System;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.UserMgment;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.UserMgment;
 
 namespace FinalYearProject.Controllers
 {
@@ -46,5 +44,70 @@ namespace FinalYearProject.Controllers
             db.SaveChanges();
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public ActionResult AdminProfile(int id)
+        {
+            User u = new UserHandler().GetUserById(id);
+            return View(u);
+        }
+
+        public int GetUserCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Users select c).Count();
+            }
+
+        }
+        public int GetMemberCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Members select c).Count();
+            }
+
+        }
+        public int GetPaymentCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Members select c).Count();
+            }
+
+        }
+        public int GetAttandanceCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Attandances select c).Count();
+            }
+
+        }
+        public int GetVideosCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Videos select c).Count();
+            }
+
+        }
+        public int GetcontactCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Contacts select c).Count();
+            }
+
+        }
+
+
+
+
     }
 }

@@ -115,6 +115,12 @@ namespace FinalYearProject.Controllers
             return View();
         }
 
+        public ActionResult MemberAttendanceDetail(int rollNo)
+        {
+            List<Attandance> attandance = new MemberHandler().GetAttandancebyRollNo(rollNo);
+            return View(attandance);
+        }
+
 
     }
 }

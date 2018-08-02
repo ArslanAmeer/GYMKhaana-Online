@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*@{
-            User currentUser = (User)Session[WebUtils.Current_User];
+    @{
+        User currentUser = (User)Session[WebUtils.Current_User];
 
-        }*@
+    }
     @*<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>*@
     <!--===============================================================================================-->
     <link href="~/Content/MDB/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -50,10 +50,12 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Your Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="#"><span class="fa fa-user"></span>&nbsp;@currentUser.Fullname</a>
+                        <a class="dropdown-item" href="@Url.Action("UserProfile", "Users", new {id = currentUser.Id})"><span class="fa fa-user"></span>Your Profile</a>
+
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Special Work</a>
+
+                        <a class="dropdown-item" href="@Url.Action("Logout", "Users")"><span class="fa fa-sign-out"></span>&nbsp; Logout</a>
                     </div>
                 </li>
             </ul>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Attandance>
+
+@{
+    ViewBag.Title = "MemberAttendanceDetail";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<h2>MemberAttendanceDetail</h2>
+
+<table class="table">
+    <tr class="bg-dark text-white">
+        <th>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttandanceDdl.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttandanceDdl.Name)
+            </td>
+        </tr>
+    }
+
+</table>
