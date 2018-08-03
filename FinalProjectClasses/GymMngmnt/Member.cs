@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FinalProjectClasses.UserMgment;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FinalProjectClasses.UserMgment;
 
 namespace FinalProjectClasses.GymMngmnt
 {
@@ -27,6 +23,7 @@ namespace FinalProjectClasses.GymMngmnt
         public int RollNo { get; set; }
         [Required]
         public string SubmitTo { get; set; }
+        public int TotalPaidAmount { get; set; }
         public virtual Gender Gender { get; set; }
 
 
