@@ -1,12 +1,10 @@
-﻿using System;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.GymMngmnt;
-using FinalProjectClasses.Migrations;
 
 namespace FinalYearProject.Controllers
 {
@@ -37,9 +35,12 @@ namespace FinalYearProject.Controllers
                 payment.FeeDate = Convert.ToDateTime(formdata["FeeDate"]);
                 payment.PaidAmount = Convert.ToInt32(formdata["PaidAmount"]);
                 payment.RollNo = Convert.ToInt32(formdata["RollNo"]);
-                payment.Member = new Member { Id = new MemberHandler().GetUserByRollNo(payment.RollNo).Id };
+                Member mem = new MemberHandler().GetUserByRollNo(payment.RollNo);
+                payment.Member = mem;
+                mem.TotalPaidAmount = mem.TotalPaidAmount + Convert.ToInt32(formdata["PaidAmount"]);
                 db.Payments.Add(payment);
                 db.Entry(payment.Member).State = EntityState.Unchanged;
+                db.Entry(mem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("index");
             }
@@ -88,5 +89,6 @@ namespace FinalYearProject.Controllers
             List<Payment> payment = new PaymentHandler().GetPaymentbyRollNo(rollNo);
             return View(payment);
         }
+
     }
 }
