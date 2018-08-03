@@ -462,6 +462,7 @@
     <Content Include="Views\Contact\SubmitMessage.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Attandance\_DeleteAttandance.cshtml" />
+    <Content Include="Views\Admin\GymRevenueDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
