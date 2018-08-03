@@ -1,4 +1,5 @@
 ﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
 using FinalProjectClasses.UserMgment;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -106,7 +107,23 @@ namespace FinalYearProject.Controllers
 
         }
 
+        public int GymRevenue()
+        {
+            int rev = 0;
+            List<Member> membs = new MemberHandler().GetMembers();
 
+            foreach (var m in membs)
+            {
+                rev = rev + m.TotalPaidAmount;
+            }
+            return rev;
+        }
+
+        public ActionResult GymRevenueDetail()
+        {
+            List<Member> members = new MemberHandler().GetMembers();
+            return View(members);
+        }
 
 
     }
