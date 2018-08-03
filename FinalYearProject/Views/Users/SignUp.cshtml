@@ -47,7 +47,7 @@
                     @Html.TextBoxFor(x => x.Fullname, "", new { @class = "input100", type = "text", name = "Fullname" })
                     <span class="focus-input100" data-placeholder="Fullname"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Fullname, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Valid email is: usm@gmail.com">
                     @Html.TextBoxFor(x => x.Loginid, "", new { @class = "input100", type = "text", name = "Loginid" })
@@ -62,7 +62,7 @@
                     @Html.TextBoxFor(x => x.Password, "", new { @class = "input100", type = "password", name = "Password" })
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Password, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
                     <span class="btn-show-pass">
@@ -71,56 +71,56 @@
                     @Html.TextBoxFor(x => x.ConfirmPassword, "", new { @class = "input100", type = "password", name = "ConfirmPassword" })
                     <span class="focus-input100" data-placeholder="ConfirmPassword"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Valid email is: usm@gmail.com">
                     @Html.TextBoxFor(x => x.Email, "", new { @class = "input100", type = "text", name = "email" })
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Email, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Valid CNIC">
                     @Html.TextBoxFor(x => x.Cnic, "", new { @class = "input100", type = "number", name = "Cnic" })
                     <span class="focus-input100" data-placeholder="CNIC"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Cnic, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Mobile No">
                     @Html.TextBoxFor(x => x.MobileNo, "", new { @class = "input100", type = "text", name = "MobileNo" })
                     <span class="focus-input100" data-placeholder="MobileNo"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.MobileNo, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Date of Birth">
                     @Html.TextBoxFor(x => x.DateofBirth, "", new { @class = "input100", type = "date", name = "DateofBirth" })
                     <span class="focus-input100" data-placeholder="Date-of-Birth"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.DateofBirth, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your Shift">
                     @Html.TextBoxFor(x => x.Shift, "", new { @class = "input100", type = "text", name = "Shift" })
                     <span class="focus-input100" data-placeholder="Select Shift"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Shift, null, new { style = "color :red" }) </div>
                 <br />
 
                 <div class="wrap-input100 validate-input" data-validate="Enter Your FullAddress">
                     @Html.TextBoxFor(x => x.FullAddress, "", new { @class = "input100", type = "text", name = "FullAddress" })
                     <span class="focus-input100" data-placeholder="Address"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.FullAddress, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your City Name">
                     @Html.TextBoxFor(x => x.City, "", new { @class = "input100", type = "text", name = "City" })
                     <span class="focus-input100" data-placeholder="City"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.City, null, new { style = "color :red" }) </div>
                 <br />
                 <div class="wrap-input100 validate-input" data-validate="Enter Your State">
                     @Html.TextBoxFor(x => x.State, "", new { @class = "input100", type = "text", name = "State" })
                     <span class="focus-input100" data-placeholder="State"></span>
                 </div>
-                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.Loginid, null, new { style = "color :red" }) </div>
+                <div style="text-align: center;"> @Html.ValidationMessageFor(m => m.State, null, new { style = "color :red" }) </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Gender.Name)&nbsp;&nbsp;&nbsp;&nbsp;
                     @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
