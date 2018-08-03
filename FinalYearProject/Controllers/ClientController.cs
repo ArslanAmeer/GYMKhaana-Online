@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using FinalProjectClasses.GymMngmnt;
+﻿using FinalProjectClasses.GymMngmnt;
 using FinalProjectClasses.UserMgment;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
 {
@@ -14,10 +11,14 @@ namespace FinalYearProject.Controllers
         public ActionResult Index()
         {
             User u = (User)Session[WebUtils.Current_User];
-            if (u.IsInRole(WebUtils.Admin))
+            if (u != null)
             {
-                RedirectToAction("Index", "Admin");
+                if (u.IsInRole(WebUtils.Admin))
+                {
+                    RedirectToAction("Index", "Admin");
+                }
             }
+
             return View();
         }
 
