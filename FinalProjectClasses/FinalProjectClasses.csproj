@@ -53,6 +53,7 @@
     <Compile Include="GymMngmnt\AttandanceHandler.cs" />
     <Compile Include="GymMngmnt\Contact.cs" />
     <Compile Include="GymMngmnt\Image.cs" />
+    <Compile Include="GymMngmnt\Instructer.cs" />
     <Compile Include="GymMngmnt\Member.cs" />
     <Compile Include="GymMngmnt\MemberHandler.cs" />
     <Compile Include="GymMngmnt\Payment.cs" />
