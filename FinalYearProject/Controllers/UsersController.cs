@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using FinalProjectClasses;
+﻿using FinalProjectClasses;
 using FinalProjectClasses.UserMgment;
 using FinalYearProject.Models;
+using System;
+using System.Data.Entity;
+using System.Web;
+using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
 {
