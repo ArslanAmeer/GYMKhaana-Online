@@ -4,8 +4,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @Html.Partial("~/Views/Instructor/_DeleteInstructer.cshtml")
-<table class="table">
-    <tr>
+<table class="table table-striped mt-2">
+    <tr class="text-white" style="background: black">
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -22,9 +25,6 @@
             @Html.DisplayNameFor(model => model.PhoneNo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Achivements)
         </th>
         <th>Actions</th>
@@ -32,6 +32,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                <img src="/Content/InstructorImages/@Url.Content(item.ImageUrl)" style="width: 50px; height:50px;border-radius: 50%" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -48,14 +51,11 @@
                 @Html.DisplayFor(modelItem => item.PhoneNo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Achivements)
             </td>
             <td>
                 <a href="#basicExampleModal1" data-toggle="modal" id="@item.Id" class="hits"><span style="color: red" class="fa fa-remove"></span></a>&nbsp;|
-                <a href="@Url.Action("UpdateUser", "Users", new {id = item.Id})"><span style="color: green" class="fa fa-edit"></span></a>
+                <a href="@Url.Action("UpdateInstructor", "Instructor", new {id = item.Id})"><span style="color: green" class="fa fa-edit"></span></a>
             </td>
         </tr>
     }
@@ -64,7 +64,7 @@
 @section myscript
 {
     <script type="text/javascript">
-$(function () {
+        $(function () {
             $(".hits").click(function () {
                 var rid = $(this).attr("id");
                 $("#hiddenOrderId").val(rid);
@@ -73,7 +73,7 @@ $(function () {
             $("#hit").click(function (event) {
                 var delRecord = $("#hiddenOrderId").val();
                 $.ajax({
-                    url: "/Admin/DeleteUesr/" + delRecord,
+                    url: "/Admin/UpdateInstructor/" + delRecord,
                     type: "POST",
                     data: { id: delRecord },
                     success: function (result) {
