@@ -465,6 +465,9 @@
     <Content Include="Views\Attandance\_DeleteAttandance.cshtml" />
     <Content Include="Views\Admin\GymRevenueDetail.cshtml" />
     <Content Include="Views\Instructor\HireInstructor.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\Instructor\_DeleteInstructer.cshtml" />
+    <Content Include="Views\Instructor\UpdateInstructor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
