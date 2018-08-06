@@ -31,7 +31,7 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr id="row_@item.Id">
             <td>
                 <img src="/Content/InstructorImages/@Url.Content(item.ImageUrl)" style="width: 50px; height:50px;border-radius: 50%" />
             </td>
@@ -73,7 +73,7 @@
             $("#hit").click(function (event) {
                 var delRecord = $("#hiddenOrderId").val();
                 $.ajax({
-                    url: "/Admin/UpdateInstructor/" + delRecord,
+                    url: "/Admin/DeleteInst/" + delRecord,
                     type: "POST",
                     data: { id: delRecord },
                     success: function (result) {
