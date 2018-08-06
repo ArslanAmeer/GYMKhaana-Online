@@ -5,13 +5,15 @@
 }
 @using (Html.BeginForm("HireInstructor", "Instructor", FormMethod.Post, new { }))
 {
-    <div class="validate-input" style="margin-left: 20%">
-        <div style="margin-bottom: 6%;">
+
+
+    <div class="validate-input mt-3" style="margin-left: 40%">
+        <div style="margin-bottom: 4%;">
             <div class="" id="fileUpldbtnContainer" style="padding: 0; width: 221px;">
                 <div>
-                    <img id="blah" src="" alt="" class="img-responsive" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 2px;border-radius:50%" />
+                    <img id="blah" src="" alt="" class="img-responsive img-thumbnail mt-2" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 6px;" />
                 </div>
-                <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 51px; font-size: 74px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);border-radius:50%">
+                <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 51px; font-size: 74px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);">
                     <span class="uploadFile"><span class="fa fa-plus"></span></span>
                     <input id="photo" name="photo" type="file" class="upload" style="position: absolute; top:-2px;left: 16px; margin: 0; padding: 0px; font-size: 2em; cursor: pointer; opacity: 0; filter: alpha(opacity=0); box-sizing: content-box; width: 197px;" />
                 </div>
@@ -19,42 +21,52 @@
         </div>
     </div>
 
-    <div class="md-form">
-        <i class="fa fa-university prefix"></i>
-        @Html.TextBoxFor(m => m.Name, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.Name)
-        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="md-form">
+                <i class="fa fa-university prefix"></i>
+                @Html.TextBoxFor(m => m.Name, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+            </div>
+            <div class="md-form">
+                <i class="fa fa-trophy prefix"></i>
+                @Html.TextBoxFor(m => m.Achivements, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Achivements)
+                @Html.ValidationMessageFor(m => m.Achivements, null, new { @class = "text-danger" })
+            </div>
+            <div class="md-form">
+                <i class="fa fa-star prefix"></i>
+                @Html.TextBoxFor(m => m.Experience, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Experience)
+                @Html.ValidationMessageFor(m => m.Experience, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="md-form">
+                <i class="fa fa-address-book prefix"></i>
+                @Html.TextBoxFor(m => m.FullAddress, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.FullAddress)
+                @Html.ValidationMessageFor(m => m.FullAddress, null, new { @class = "text-danger" })
+            </div>
+            <div class="md-form">
+                <i class="fa fa-mobile prefix"></i>
+                @Html.TextBoxFor(m => m.PhoneNo, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.PhoneNo)
+                @Html.ValidationMessageFor(m => m.PhoneNo, null, new { @class = "text-danger" })
+            </div>
+            <div class="md-form">
+                <i class="fa fa-dollar prefix"></i>
+                @Html.TextBoxFor(m => m.Salary, null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Salary)
+                @Html.ValidationMessageFor(m => m.Salary, null, new { @class = "text-danger" })
+            </div>
+        </div>
     </div>
-    <div class="md-form">
-        <i class="fa fa-trophy prefix"></i>
-        @Html.TextBoxFor(m => m.Achivements, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.Achivements)
-        @Html.ValidationMessageFor(m => m.Achivements, null, new { @class = "text-danger" })
-    </div>
-    <div class="md-form">
-        <i class="fa fa-star prefix"></i>
-        @Html.TextBoxFor(m => m.Experience, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.Experience)
-        @Html.ValidationMessageFor(m => m.Experience, null, new { @class = "text-danger" })
-    </div>
-    <div class="md-form">
-        <i class="fa fa-address-book prefix"></i>
-        @Html.TextBoxFor(m => m.FullAddress, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.FullAddress)
-        @Html.ValidationMessageFor(m => m.FullAddress, null, new { @class = "text-danger" })
-    </div>
-    <div class="md-form">
-        <i class="fa fa-mobile prefix"></i>
-        @Html.TextBoxFor(m => m.PhoneNo, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.PhoneNo)
-        @Html.ValidationMessageFor(m => m.PhoneNo, null, new { @class = "text-danger" })
-    </div>
-    <div class="md-form">
-        <i class="fa fa-dollar prefix"></i>
-        @Html.TextBoxFor(m => m.Salary, null, new { @class = "form-control" })
-        @Html.LabelFor(m => m.Salary)
-        @Html.ValidationMessageFor(m => m.Salary, null, new { @class = "text-danger" })
-    </div>
+
+
+
+
     <div>
         <button class="btn btn-deep-purple text-white"><i class="fa fa-paper-plane"></i>&nbsp; Hire Now</button>
     </div>
