@@ -1,6 +1,9 @@
 ﻿using FinalProjectClasses;
 using FinalProjectClasses.GymMngmnt;
 using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,7 +14,8 @@ namespace FinalYearProject.Controllers
         // GET: Instructor
         public ActionResult Index()
         {
-            return View();
+            List<Instructer> instructers = new PaymentHandler().GeInstructerList();
+            return View(instructers);
         }
         [HttpGet]
         public ActionResult HireInstructor()
@@ -44,6 +48,33 @@ namespace FinalYearProject.Controllers
                 db.SaveChanges();
             }
             return View();
+        }
+
+        public int GetInstrCount()
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                return (from c in db.Instructers select c).Count();
+
+            }
+        }
+        [HttpGet]
+        public ActionResult UpdateInstructor(int id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateInstructor(Instructer instructer)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                db.Entry(instructer).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Instructor");
+            }
+
         }
     }
 }
