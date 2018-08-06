@@ -7,6 +7,12 @@
 
 
 
+
+
+
+
+
+
     .box {
         width: 240px;
         height: 180px;
@@ -85,7 +91,15 @@
         <div class="card box">
             <a href="@Url.Action("GymRevenueDetail", "Admin")">
                 <h2><span class="fa fa-dollar fa-lg"></span><span class="ml-3">@Html.Action("GymRevenue", "Admin")</span> </h2>
-                <h3 class="text-center">Messages</h3>
+                <h3 class="text-center">Revenue</h3>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 mt-2">
+        <div class="card box">
+            <a href="@Url.Action("Index", "Instructor")">
+                <h2><span class="fa fa-dollar fa-lg"></span><span class="ml-3">@Html.Action("GetInstrCount", "Instructor")</span> </h2>
+                <h3 class="text-center">Instructor's</h3>
             </a>
         </div>
     </div>
