@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
+using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
 {
@@ -9,6 +11,21 @@ namespace FinalYearProject.Controllers
         {
             return View();
         }
-        public ActionResult HireInstr
+        [HttpGet]
+        public ActionResult HireInstructor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult HireInstructor(Instructer instructer)
+        {
+            Dbcontext db = new Dbcontext();
+            using (db)
+            {
+                db.Instructers.Add(instructer);
+                db.SaveChanges();
+            }
+            return View();
+        }
     }
 }
