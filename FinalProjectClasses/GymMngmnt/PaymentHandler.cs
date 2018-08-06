@@ -39,5 +39,15 @@ namespace FinalProjectClasses.GymMngmnt
                         select v).ToList();
             }
         }
+
+        public Instructer GetInstructerById(int id)
+        {
+            using (db)
+            {
+                return (from u in db.Instructers
+                        where u.Id == id
+                        select u).FirstOrDefault();
+            }
+        }
     }
 }
