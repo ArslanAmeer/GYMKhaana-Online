@@ -62,7 +62,8 @@ namespace FinalYearProject.Controllers
         [HttpGet]
         public ActionResult UpdateInstructor(int id)
         {
-            return View();
+            Instructer instructer = new PaymentHandler().GetInstructerById(id);
+            return View(instructer);
         }
         [HttpPost]
         public ActionResult UpdateInstructor(Instructer instructer)
@@ -74,7 +75,17 @@ namespace FinalYearProject.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", "Instructor");
             }
+        }
 
+        public ActionResult Delete(int id)
+        {
+            Dbcontext db = new Dbcontext();
+            Instructer p = (from c in db.Instructers
+                            where c.Id == id
+                            select c).FirstOrDefault();
+            db.Entry(p).State = EntityState.Deleted;
+            db.SaveChanges();
+            return Json("Delete", JsonRequestBehavior.AllowGet);
         }
     }
 }
