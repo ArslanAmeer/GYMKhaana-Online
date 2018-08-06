@@ -77,7 +77,7 @@ namespace FinalYearProject.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult DeleteInst(int id)
         {
             Dbcontext db = new Dbcontext();
             Instructer p = (from c in db.Instructers
