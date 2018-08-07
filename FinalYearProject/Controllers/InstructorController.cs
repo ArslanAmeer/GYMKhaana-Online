@@ -87,5 +87,29 @@ namespace FinalYearProject.Controllers
             db.SaveChanges();
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult AllInstructer()
+        {
+            List<Instructer> instructers = new PaymentHandler().GeInstructerList();
+            return View(instructers);
+        }
+
+        public ActionResult SelectInstructor(int id)
+        {
+            Dbcontext db = new Dbcontext();
+            Instructer instructer = new Instructer();
+            using (db)
+            {
+                instructer.Member = new Member { Id = instructer.Id };
+                db.Instructers.Add(instructer);
+                db.SaveChanges();
+                return RedirectToAction("HireSuccess", "Instructor");
+            }
+        }
+
+        public ActionResult HireSuccess()
+        {
+            return View();
+        }
     }
 }
