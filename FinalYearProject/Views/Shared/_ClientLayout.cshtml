@@ -41,19 +41,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("Index","Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="fa fa-user"></span> User
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @if (IsPost)
-                        {
+                @if (currentUser != null)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user"></span> User
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="@Url.Action("UserProfile", "Users", new {id = currentUser.Id})"><span class="fa fa-user"></span>&nbsp; Your Profile</a>
                             <a class="dropdown-item" href="@Url.Action("UserProfileSetting", "Users", new {id = currentUser.Id})"><span class="fa fa-cog"></span>&nbsp; Profile Setting</a>
                             <a class="dropdown-item" href="@Url.Action("Logout", "Users")"><span class="fa fa-sign-out"></span>&nbsp; Logout</a>
-                        }
-                    </div>
-                </li>
+                        </div>
+                    </li>
+                }
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
