@@ -53,7 +53,7 @@
                 @Html.DisplayFor(modelItem => item.Achivements)
             </td>
             <td>
-                <a href="@Url.Action("UpdateInstructor", "Instructor", new {id = item.Id})" class="btn btn-"><span style="color: green" class="fa fa-check"></span>Select instructor</a>
+                <a href="@Url.Action("SelectInstructor", "Instructor", new {id = item.Id})" class="btn btn-outline-brown btn-md"><span style="color: green" class="fa fa-check"></span>&nbsp; Select instructor</a>
             </td>
         </tr>
     }
