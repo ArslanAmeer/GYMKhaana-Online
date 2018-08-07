@@ -45,18 +45,20 @@
                 <i class="fa fa-calendar fa-lg prefix"></i>
                 @Html.TextBoxFor(m => m.DateofBirth, "", new { @class = "form-control", type = "date" })
             </div>
-
-            <fieldset>
-                <legend border="1px">@Html.LabelFor(m => m.Gender.Name)</legend>
-                @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
-                {
-                    <label>@Html.RadioButton("Gender.Name", b.Value) @b.Text</label>
-                }
-            </fieldset>
-
+            <div>
+                <fieldset>
+                    <legend border="1px">@Html.LabelFor(m => m.Gender.Name)</legend>
+                    @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
+                    {
+                        <label>@Html.RadioButton("Gender.Name", b.Value) @b.Text</label>
+                    }
+                </fieldset>
+            </div>
+            <div>
+                @Html.DropDownList("instructor", (IEnumerable<SelectListItem>)ViewBag.Instructors, "- Select Your Trainer -", new { @class = "form-control" })
+            </div>
         </div>
         <div class="col-lg-4">
-
             <div class="md-form form-sm">
                 <i class="fa fa-id-badge fa-lg prefix"></i>
                 @Html.TextBoxFor(m => m.RollNo, "", new { @class = "form-control", id = "input-7", type = "number" })
@@ -69,7 +71,6 @@
             </div>
             <div class="md-form form-sm">
                 <i class="fa fa-calendar fa-lg prefix"></i>
-
                 @Html.TextBoxFor(m => m.CurrentDate, "", new { @class = "form-control", id = "input-9", placeholder = "Current Date", type = "date" })
             </div>
             <div class="md-form form-sm">
@@ -82,7 +83,6 @@
                 @Html.LabelFor(m => m.SubmitTo, new { @for = "input-11" })
             </div>
         </div>
-
     </div>
 
     <button class=" pull-right btn btn-outline-dark-green" type="submit"><span class="fa fa-user-plus"></span>&nbsp;Register</button>
