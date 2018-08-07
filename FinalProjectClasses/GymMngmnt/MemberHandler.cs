@@ -11,7 +11,10 @@ namespace FinalProjectClasses.GymMngmnt
         {
             using (db)
             {
-                return (from c in db.Members.Include(m => m.Gender) select c).ToList();
+                return (from c in db.Members
+                    .Include(m => m.Gender)
+                    .Include(m => m.Instructer)
+                        select c).ToList();
             }
         }
 

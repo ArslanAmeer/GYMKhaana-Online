@@ -25,6 +25,7 @@ namespace FinalProjectClasses.GymMngmnt
         public string SubmitTo { get; set; }
         public int TotalPaidAmount { get; set; }
         public virtual Gender Gender { get; set; }
+        public Instructer Instructer { get; set; }
 
 
     }
