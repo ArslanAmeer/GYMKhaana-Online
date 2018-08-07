@@ -20,6 +20,8 @@ namespace FinalProjectClasses.GymMngmnt
         [Required]
         public string Achivements { get; set; }
 
+        public Member Member { get; set; }
+
 
     }
 }
