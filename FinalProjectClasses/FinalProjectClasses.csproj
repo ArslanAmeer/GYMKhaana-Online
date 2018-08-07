@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201808060533116_UpdateInstructerTbale.Designer.cs">
       <DependentUpon>201808060533116_UpdateInstructerTbale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808070534530_MemInstrAssociate.cs" />
+    <Compile Include="Migrations\201808070534530_MemInstrAssociate.Designer.cs">
+      <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMgment\Gender.cs" />
@@ -218,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808060533116_UpdateInstructerTbale.resx">
       <DependentUpon>201808060533116_UpdateInstructerTbale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808070534530_MemInstrAssociate.resx">
+      <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
