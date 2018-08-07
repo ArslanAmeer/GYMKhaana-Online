@@ -469,6 +469,8 @@
     <Content Include="Views\Instructor\_DeleteInstructer.cshtml" />
     <Content Include="Views\Instructor\UpdateInstructor.cshtml" />
     <Content Include="Views\Contact\_DeleteContact.cshtml" />
+    <Content Include="Views\Instructor\AllInstructer.cshtml" />
+    <Content Include="Views\Instructor\HireSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
