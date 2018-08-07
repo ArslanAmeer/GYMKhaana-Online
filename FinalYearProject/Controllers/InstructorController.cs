@@ -97,11 +97,10 @@ namespace FinalYearProject.Controllers
         public ActionResult SelectInstructor(int id)
         {
             Dbcontext db = new Dbcontext();
-            Instructer instructer = new Instructer();
+            Member member = new Member();
             using (db)
             {
-                instructer.Member = new Member { Id = instructer.Id };
-                db.Instructers.Add(instructer);
+                db.Members.Add(member);
                 db.SaveChanges();
                 return RedirectToAction("HireSuccess", "Instructor");
             }
