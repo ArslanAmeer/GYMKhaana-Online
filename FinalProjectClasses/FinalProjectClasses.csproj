@@ -148,6 +148,14 @@
     <Compile Include="Migrations\201808070534530_MemInstrAssociate.Designer.cs">
       <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808070601003_IstructorAssociate.cs" />
+    <Compile Include="Migrations\201808070601003_IstructorAssociate.Designer.cs">
+      <DependentUpon>201808070601003_IstructorAssociate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808071609425_RemoveValidatino.cs" />
+    <Compile Include="Migrations\201808071609425_RemoveValidatino.Designer.cs">
+      <DependentUpon>201808071609425_RemoveValidatino.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMgment\Gender.cs" />
@@ -225,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808070534530_MemInstrAssociate.resx">
       <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808070601003_IstructorAssociate.resx">
+      <DependentUpon>201808070601003_IstructorAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808071609425_RemoveValidatino.resx">
+      <DependentUpon>201808071609425_RemoveValidatino.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
