@@ -53,6 +53,7 @@
     <Compile Include="GymMngmnt\AttandanceHandler.cs" />
     <Compile Include="GymMngmnt\Contact.cs" />
     <Compile Include="GymMngmnt\Image.cs" />
+    <Compile Include="GymMngmnt\Instructer.cs" />
     <Compile Include="GymMngmnt\Member.cs" />
     <Compile Include="GymMngmnt\MemberHandler.cs" />
     <Compile Include="GymMngmnt\Payment.cs" />
@@ -123,6 +124,38 @@
     <Compile Include="Migrations\201807290611025_ContactTableAdded.Designer.cs">
       <DependentUpon>201807290611025_ContactTableAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808021421323_UpdatePaymentTbl.cs" />
+    <Compile Include="Migrations\201808021421323_UpdatePaymentTbl.Designer.cs">
+      <DependentUpon>201808021421323_UpdatePaymentTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021443246_UpdateMemberTbl.cs" />
+    <Compile Include="Migrations\201808021443246_UpdateMemberTbl.Designer.cs">
+      <DependentUpon>201808021443246_UpdateMemberTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808042001113_InstructerTbl.cs" />
+    <Compile Include="Migrations\201808042001113_InstructerTbl.Designer.cs">
+      <DependentUpon>201808042001113_InstructerTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808060450413_UpdateInstructerTbl.cs" />
+    <Compile Include="Migrations\201808060450413_UpdateInstructerTbl.Designer.cs">
+      <DependentUpon>201808060450413_UpdateInstructerTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808060533116_UpdateInstructerTbale.cs" />
+    <Compile Include="Migrations\201808060533116_UpdateInstructerTbale.Designer.cs">
+      <DependentUpon>201808060533116_UpdateInstructerTbale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808070534530_MemInstrAssociate.cs" />
+    <Compile Include="Migrations\201808070534530_MemInstrAssociate.Designer.cs">
+      <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808070601003_IstructorAssociate.cs" />
+    <Compile Include="Migrations\201808070601003_IstructorAssociate.Designer.cs">
+      <DependentUpon>201808070601003_IstructorAssociate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808071609425_RemoveValidatino.cs" />
+    <Compile Include="Migrations\201808071609425_RemoveValidatino.Designer.cs">
+      <DependentUpon>201808071609425_RemoveValidatino.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserMgment\Gender.cs" />
@@ -182,6 +215,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807290611025_ContactTableAdded.resx">
       <DependentUpon>201807290611025_ContactTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021421323_UpdatePaymentTbl.resx">
+      <DependentUpon>201808021421323_UpdatePaymentTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021443246_UpdateMemberTbl.resx">
+      <DependentUpon>201808021443246_UpdateMemberTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808042001113_InstructerTbl.resx">
+      <DependentUpon>201808042001113_InstructerTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808060450413_UpdateInstructerTbl.resx">
+      <DependentUpon>201808060450413_UpdateInstructerTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808060533116_UpdateInstructerTbale.resx">
+      <DependentUpon>201808060533116_UpdateInstructerTbale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808070534530_MemInstrAssociate.resx">
+      <DependentUpon>201808070534530_MemInstrAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808070601003_IstructorAssociate.resx">
+      <DependentUpon>201808070601003_IstructorAssociate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808071609425_RemoveValidatino.resx">
+      <DependentUpon>201808071609425_RemoveValidatino.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

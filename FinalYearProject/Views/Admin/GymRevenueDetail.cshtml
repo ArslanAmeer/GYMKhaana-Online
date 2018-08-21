@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Member>
+@{
+    ViewBag.Title = "GymRevenueDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>GymRevenueDetail</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPaidAmount)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                <img src="/Content/MemberPics/@Url.Content(item.ImageUrl)" style="width: 50px; height: 50px;border-radius: 50%" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPaidAmount)
+            </td>
+        </tr>
+    }
+</table>
+<div class="container">
+    <div class="jumbotron">
+        <b>Gym total Revenue: @Html.Action("GymRevenue", "Admin")</b>
+    </div>
+</div>

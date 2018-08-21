@@ -22,6 +22,7 @@ namespace FinalProjectClasses
         public DbSet<AttandanceDDL> AttandanceDdls { get; set; }
         public DbSet<Attandance> Attandances { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Instructer> Instructers { get; set; }
 
 
     }

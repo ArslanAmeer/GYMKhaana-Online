@@ -1,13 +1,13 @@
-﻿using FinalYearProject.Models;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
+using FinalProjectClasses.UserMgment;
+using FinalYearProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.GymMngmnt;
-using FinalProjectClasses.UserMgment;
 
 namespace FinalYearProject.Controllers
 {
@@ -24,6 +24,7 @@ namespace FinalYearProject.Controllers
         public ActionResult AddMember()
         {
             ViewBag.GenderList = ModelHelper.ToSelectItemList(new UserHandler().GetGender());
+            ViewBag.Instructors = ModelHelper.ToSelectItemList(new PaymentHandler().GeInstructerList());
             return View();
         }
 
@@ -40,6 +41,7 @@ namespace FinalYearProject.Controllers
                     member.CNIC = Convert.ToInt64(formdata["CNIC"]);
                     member.MobileNo = Convert.ToInt64(formdata["MobileNo"]);
                     member.Gender = new Gender { Id = Convert.ToInt32(formdata["Gender.Name"]) };
+                    member.Instructer = new Instructer { Id = Convert.ToInt32(formdata["instructor"]) };
                     member.FullAddress = formdata["FullAddress"];
                     member.DateofBirth = Convert.ToDateTime(formdata["DateofBirth"]);
                     member.CurrentDate = Convert.ToDateTime(formdata["CurrentDate"]);
@@ -66,6 +68,7 @@ namespace FinalYearProject.Controllers
                     }
                     dbcontext.Members.Add(member);
                     dbcontext.Entry(member.Gender).State = EntityState.Unchanged;
+                    dbcontext.Entry(member.Instructer).State = EntityState.Unchanged;
                     dbcontext.SaveChanges();
                     return RedirectToAction("Message");
                 }

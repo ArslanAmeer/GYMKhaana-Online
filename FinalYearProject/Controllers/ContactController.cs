@@ -1,6 +1,8 @@
 ﻿using FinalProjectClasses;
 using FinalProjectClasses.GymMngmnt;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
@@ -34,6 +36,17 @@ namespace FinalYearProject.Controllers
         public ActionResult SuccessMessage()
         {
             return View();
+        }
+
+        public ActionResult DeleteContact(int id)
+        {
+            Dbcontext db = new Dbcontext();
+            Contact p = (from c in db.Contacts
+                         where c.Id == id
+                         select c).FirstOrDefault();
+            db.Entry(p).State = EntityState.Deleted;
+            db.SaveChanges();
+            return Json("Delete", JsonRequestBehavior.AllowGet);
         }
     }
 }

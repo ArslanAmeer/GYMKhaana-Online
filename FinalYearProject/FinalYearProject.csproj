@@ -391,6 +391,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ImagesGalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -462,6 +463,14 @@
     <Content Include="Views\Contact\SubmitMessage.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Attandance\_DeleteAttandance.cshtml" />
+    <Content Include="Views\Admin\GymRevenueDetail.cshtml" />
+    <Content Include="Views\Instructor\HireInstructor.cshtml" />
+    <Content Include="Views\Instructor\Index.cshtml" />
+    <Content Include="Views\Instructor\_DeleteInstructer.cshtml" />
+    <Content Include="Views\Instructor\UpdateInstructor.cshtml" />
+    <Content Include="Views\Contact\_DeleteContact.cshtml" />
+    <Content Include="Views\Instructor\AllInstructer.cshtml" />
+    <Content Include="Views\Instructor\HireSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -471,6 +480,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\InstructorImages\" />
     <Folder Include="Content\MemberPics\" />
   </ItemGroup>
   <ItemGroup>

@@ -75,6 +75,12 @@
                         <li data-toggle="collapse" data-target="#products">
                             <a href="@Url.Action("UserDetails", "Admin")"><i class="fa fa-users fa-lg"></i>&nbsp;User Details</a>
                         </li>
+                        <li data-toggle="collapse" data-target="#products">
+                            <a href="@Url.Action("HireInstructor", "Instructor")"><i class="fa fa-male fa-lg"></i>&nbsp;Hire Instructor</a>
+                        </li>
+                        <li data-toggle="collapse" data-target="#products">
+                            <a href="@Url.Action("Index", "Instructor")"><i class="fa fa-eye fa-lg"></i>&nbsp;Instructor Detail</a>
+                        </li>
                         <li data-toggle="collapse" data-target="#service">
                             <a href="@Url.Action("SubmitPayment", "Payment")"><i class="fa fa-dollar fa-lg"></i>&nbsp;Fee-Payment</a>
                         </li>
@@ -114,7 +120,7 @@
                 @RenderBody()
                 <hr />
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                    <p>&copy; @DateTime.Now.Year - All the Right Reserved by Gymnast</p>
                 </footer>
             </div>
         </div>

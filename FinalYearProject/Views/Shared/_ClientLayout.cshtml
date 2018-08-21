@@ -41,16 +41,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("Index","Home")"><span class="fa fa-youtube-play"></span>&nbsp;Video Taturials</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="fa fa-user"></span> User
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="@Url.Action("UserProfile","Users",new{id=currentUser.Id})"><span class="fa fa-user"></span>&nbsp; Your Profile</a>
-                        <a class="dropdown-item" href="@Url.Action("UserProfileSetting","Users",new {id=currentUser.Id})"><span class="fa fa-cog"></span>&nbsp; Profile Setting</a>
-                        <a class="dropdown-item" href="@Url.Action("Logout","Users")"><span class="fa fa-sign-out"></span>&nbsp; Logout</a>
-                    </div>
-                </li>
+                @if (currentUser != null)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user"></span> User
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="@Url.Action("UserProfile", "Users", new {id = currentUser.Id})"><span class="fa fa-user"></span>&nbsp; Your Profile</a>
+                            <a class="dropdown-item" href="@Url.Action("UserProfileSetting", "Users", new {id = currentUser.Id})"><span class="fa fa-cog"></span>&nbsp; Profile Setting</a>
+                            <a class="dropdown-item" href="@Url.Action("Logout", "Users")"><span class="fa fa-sign-out"></span>&nbsp; Logout</a>
+                        </div>
+                    </li>
+                }
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -63,26 +66,36 @@
         <div class="col-lg-3 hidden-sm">
             <div class="nav-side-menu">
                 <div class="brand" style="margin-top: 2%">
-                    <img src="~/Content/Images/@Url.Content(currentUser.ImageUrl)" class="img-responsive" style="width: 120px; height: 120px;border-radius: 50%" alt="@currentUser.Fullname" />
-                    <br /> <strong>@currentUser.Fullname</strong>
+                    @if (currentUser != null)
+                    {
+                        <img src="~/Content/Images/@Url.Content(currentUser.ImageUrl)" class="img-responsive" style="width: 120px; height: 120px; border-radius: 50%" alt="@currentUser.Fullname" />
+                        <br /> <strong>@currentUser.Fullname</strong>
+                    }
                 </div>
                 <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
                 <div class="menu-list">
                     <ul id="menu-content" class="menu-content collapse">
-                        <li data-toggle="collapse" data-target="#products">
-                            <a href="@Url.Action("MemberAttendanceDetail","Member",new {rollNo=currentUser.Id})"><i class="fa fa-table fa-lg"></i>&nbsp;Check Attandance</a>
-                        </li>
-                        <li data-toggle="collapse" data-target="#service">
-                            <a href="@Url.Action("MemberPaymentDetail","Payment",new{rollNo=currentUser.Id})"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
+                        @if (currentUser != null)
+                        {
+                            <li data-toggle="collapse" data-target="#products">
+                                <a href="@Url.Action("MemberAttendanceDetail", "Member", new {rollNo = currentUser.Id})"><i class="fa fa-table fa-lg"></i>&nbsp;Check Attandance</a>
+                            </li>
+                            <li data-toggle="collapse" data-target="#service">
+                                <a href="@Url.Action("MemberPaymentDetail", "Payment", new {rollNo = currentUser.Id})"><i class="fa fa-paypal fa-lg"></i>&nbsp;Fee Payment</a>
+                            </li>
+                            <li data-toggle="collapse" data-target="#new">
+                                <a href="@Url.Action("UserProfile", "Users", new {id = currentUser.Id})"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
+                            </li>
+                            <li data-toggle="collapse" data-target="#new">
+                                <a href="@Url.Action("AllInstructer", "Instructor")"><i class="fa fa-male fa-lg"></i>&nbsp;Instructers</a>
+                            </li>
+
+                        }
+                        <li data-toggle="collapse" data-target="#new">
+                            <a href="@Url.Action("Index", "Home")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Watch Video's</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("UserProfile","Users",new{id=currentUser.Id})"><i class="fa fa-user fa-lg"></i>&nbsp;See Profile</a>
-                        </li>
-                        <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("Index","Home")"><i class="fa fa-youtube-play fa-lg"></i>&nbsp;Watch Video's</a>
-                        </li>
-                        <li data-toggle="collapse" data-target="#new">
-                            <a href="@Url.Action("SubmitMessage","Contact")"><i class="fa fa-envelope fa-lg"></i>&nbsp;Contact us</a>
+                            <a href="@Url.Action("SubmitMessage", "Contact")"><i class="fa fa-envelope fa-lg"></i>&nbsp;Contact us</a>
                         </li>
                         <li data-toggle="collapse" data-target="#new">
                             <a href="#"><i class="fa fa-image fa-lg"></i>&nbsp;Image Gallery </a>
