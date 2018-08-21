@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectClasses.GymMngmnt
 {
-    public class VideoHandler
+    public class VideoHandler : IDisposable
     {
         Dbcontext db = new Dbcontext();
         public Video GetVideoByValue(string value)
@@ -23,6 +23,20 @@ namespace FinalProjectClasses.GymMngmnt
             using (db)
             {
                 return (from c in db.Videos select c).ToList();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
             }
         }
     }

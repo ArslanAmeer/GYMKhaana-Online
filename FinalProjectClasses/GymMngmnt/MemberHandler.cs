@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
 namespace FinalProjectClasses.GymMngmnt
 {
-    public class MemberHandler
+    public class MemberHandler : IDisposable
     {
         Dbcontext db = new Dbcontext();
         public List<Member> GetMembers()
@@ -49,6 +50,20 @@ namespace FinalProjectClasses.GymMngmnt
             using (db)
             {
                 return (from c in db.Contacts select c).ToList();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
             }
         }
     }

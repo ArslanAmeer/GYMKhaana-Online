@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
 namespace FinalProjectClasses.GymMngmnt
 {
-    public class PaymentHandler
+    public class PaymentHandler : IDisposable
     {
         Dbcontext db = new Dbcontext();
         public List<Payment> GetPaymentList()
@@ -47,6 +48,20 @@ namespace FinalProjectClasses.GymMngmnt
                 return (from u in db.Instructers
                         where u.Id == id
                         select u).FirstOrDefault();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
             }
         }
     }
