@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProjectClasses.UserMgment
 {
     public class User
     {
         public int Id { get; set; }
+
         [Required]
+        [RegularExpression(@"\\A[^\\W\\d_]+\\z", ErrorMessage = "Your Name did'nt consist of No...!")]
         public string Fullname { get; set; }
         [Required]
         public string Loginid { get; set; }
