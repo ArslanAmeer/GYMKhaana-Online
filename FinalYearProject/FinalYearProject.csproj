@@ -471,6 +471,7 @@
     <Content Include="Views\Contact\_DeleteContact.cshtml" />
     <Content Include="Views\Instructor\AllInstructer.cshtml" />
     <Content Include="Views\Instructor\HireSuccess.cshtml" />
+    <Content Include="Views\VideoandImages\AddImages.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
