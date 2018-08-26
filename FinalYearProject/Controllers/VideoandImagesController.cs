@@ -45,8 +45,13 @@ namespace FinalYearProject.Controllers
             }
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
-
+        [HttpGet]
         public ActionResult AddImages()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddImages(Image images)
         {
             return View();
         }
