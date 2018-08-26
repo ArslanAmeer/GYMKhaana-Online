@@ -1,11 +1,9 @@
-﻿using System;
+﻿using FinalProjectClasses;
+using FinalProjectClasses.GymMngmnt;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using FinalProjectClasses;
-using FinalProjectClasses.GymMngmnt;
 
 namespace FinalYearProject.Controllers
 {
@@ -47,5 +45,11 @@ namespace FinalYearProject.Controllers
             }
             return Json("Delete", JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult AddImages()
+        {
+            return View();
+        }
+
     }
 }
