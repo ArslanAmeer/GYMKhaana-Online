@@ -481,6 +481,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\GalleryImages\" />
     <Folder Include="Content\InstructorImages\" />
     <Folder Include="Content\MemberPics\" />
   </ItemGroup>
