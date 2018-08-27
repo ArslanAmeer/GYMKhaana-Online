@@ -1,8 +1,10 @@
 ﻿using FinalProjectClasses;
 using FinalProjectClasses.GymMngmnt;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace FinalYearProject.Controllers
@@ -53,7 +55,29 @@ namespace FinalYearProject.Controllers
         [HttpPost]
         public ActionResult AddImages(Image images)
         {
+            Dbcontext db = new Dbcontext();
+            int counter = 0;
+            long uno = DateTime.Now.Ticks;
 
+            foreach (string fileName in Request.Files)
+            {
+                HttpPostedFileBase file = Request.Files[fileName];
+                if (!string.IsNullOrEmpty(file.FileName))
+                {
+                    string abc = uno + "_" + ++counter +
+                                 file.FileName.Substring(file.FileName.LastIndexOf("."));
+                    string url = "~/Content/GalleryImages/" + abc;
+                    string path = Request.MapPath(url);
+                    images.ImageUrl = abc;
+                    file.SaveAs(path);
+                }
+            }
+
+            using (db)
+            {
+                db.Images.Add(images);
+                db.SaveChanges();
+            }
             return View();
         }
 
