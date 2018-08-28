@@ -14,30 +14,31 @@
                 </div>
                 <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 51px; font-size: 74px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);">
                     <span class="uploadFile"><span class="fa fa-plus"></span></span>
-                    <input id="photo" name="photo" type="file" class="upload" style="position: absolute; top:-2px;left: 16px; margin: 0; padding: 0px; font-size: 2em; cursor: pointer; opacity: 0; filter: alpha(opacity=0); box-sizing: content-box; width: 197px;" />
+                    <input id="photo" name="photo" type="file" class="upload" style="position: absolute; top: -2px; left: 16px; margin: 0; padding: 0px; font-size: 2em; cursor: pointer; opacity: 0; filter: alpha(opacity=0); box-sizing: content-box; width: 197px;" />
                 </div>
             </div>
         </div>
     </div>
-    @section myscript
+}
+@section myscript
 {
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(document).on('click', '.fileUpload', function () {
-                    $(this).children('.upload').change(function (event) {
-                        readURL(this);
-                        fileName = $(this).val();
-                    });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '.fileUpload', function () {
+                $(this).children('.upload').change(function (event) {
+                    readURL(this);
+                    fileName = $(this).val();
                 });
+            });
 
-                function readURL(input) {
-                    if (input.files && input.files[0]) {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            $('#blah').attr('src', e.target.result);
-                        }
-                        reader.readAsDataURL(input.files[0]);
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
                     }
+                    reader.readAsDataURL(input.files[0]);
                 }
-            });</script>
-    }
+            }
+        });</script>
+}
