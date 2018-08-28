@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <h2>AddImages</h2>
-@using (Html.BeginForm("HireInstructor", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddImages", "VideoandImages", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="validate-input mt-3">
         <div class="" id="fileUpldbtnContainer" style="padding: 0; width: 221px;">
             <div>
-                <img id="blah" src="" alt="" class="img-responsive" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 6px;" />
+                <img id="blah" src="" alt="" class="img-responsive img-thumbnail" style="height: 155px; width: 176px; z-index: 0; position: absolute; top: 56px;" />
             </div>
             <div class="fileUpload" style="height: 152px; width: 176px; padding: 29px 60px; font-size: 70px; color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(0, 0, 0, 0.1);">
                 <span class="uploadFile"><span class="fa fa-plus"></span></span>
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-
+    <button class="btn btn-outline-deep-purple mt-4" type="submit">Upload &nbsp;&nbsp;<span class="fa fa-upload"></span></button>
 }
 @section myscript
 {
