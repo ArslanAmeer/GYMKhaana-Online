@@ -83,8 +83,8 @@ namespace FinalYearProject.Controllers
         [HttpGet]
         public ActionResult Gallery()
         {
-
-            return View();
+            List<Image> images = new VideoHandler().GetAllImages();
+            return View(images);
         }
 
 
