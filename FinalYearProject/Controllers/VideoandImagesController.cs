@@ -80,6 +80,13 @@ namespace FinalYearProject.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public ActionResult Gallery()
+        {
+
+            return View();
+        }
+
 
     }
 }
