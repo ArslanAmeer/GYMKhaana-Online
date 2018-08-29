@@ -3,15 +3,12 @@
     ViewBag.Title = "Gallery";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
-<div class="row">
+<div class="row container mt-2">
     @foreach (var item in Model)
     {
-
-        <div class="col-lg-4 ml-4">
-            <img src="/Content/GalleryImages/@Url.Content(item.ImageUrl)" style="width: 350px; height: 300px" />
-            @Html.DisplayFor(modelItem => item.Text)
+        <div class="col-lg-4">
+            <img src="/Content/GalleryImages/@Url.Content(item.ImageUrl)" class="img-thumbnail img-rounded" style="width: 350px; height: 300px" />
+            @Html.DisplayFor(modelItem => item.Text, new { @style = "z-index:1" })
         </div>
-
-
     }
 </div>
