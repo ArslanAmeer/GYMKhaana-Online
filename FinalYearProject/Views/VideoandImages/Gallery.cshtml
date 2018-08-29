@@ -1,39 +1,18 @@
 ﻿@model IEnumerable<FinalProjectClasses.GymMngmnt.Image>
-
 @{
     ViewBag.Title = "Gallery";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
-
-<h2>Gallery</h2>
-
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th></th>
-    </tr>
-
+<h2 class="text-center">Gallery</h2>
+<div class="row">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
 
-</table>
+        <div class="col-lg-4 ml-4">
+            <img src="/Content/GalleryImages/@Url.Content(item.ImageUrl)" style="width: 350px; height: 300px" />
+            @Html.DisplayFor(modelItem => item.Text)
+        </div>
+
+
+    }
+</div>
