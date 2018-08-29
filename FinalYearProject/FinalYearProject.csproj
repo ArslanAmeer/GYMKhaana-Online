@@ -472,6 +472,7 @@
     <Content Include="Views\Instructor\AllInstructer.cshtml" />
     <Content Include="Views\Instructor\HireSuccess.cshtml" />
     <Content Include="Views\VideoandImages\AddImages.cshtml" />
+    <Content Include="Views\VideoandImages\Gallery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
