@@ -1,28 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProjectClasses.GymMngmnt
 {
     public class VideoHandler
     {
-        Dbcontext db = new Dbcontext();
+        private Dbcontext _db = new Dbcontext();
         public Video GetVideoByValue(string value)
         {
-            using (db)
+            using (_db)
             {
-                return (from c in db.Videos where c.AddDays == value select c).FirstOrDefault();
+                return (from c in _db.Videos where c.AddDays == value select c).FirstOrDefault();
 
             }
 
         }
         public List<Video> GetAllVideos()
         {
-            using (db)
+            using (_db)
             {
-                return (from c in db.Videos select c).ToList();
+                return (from c in _db.Videos select c).ToList();
+            }
+        }
+
+        public List<Image> GetAllImages()
+        {
+            using (_db)
+            {
+                return (from c in _db.Images select c).ToList();
             }
         }
     }
