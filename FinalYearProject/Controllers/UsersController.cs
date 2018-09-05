@@ -121,9 +121,9 @@ namespace FinalYearProject.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Login", "Users");
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
-                    throw exception;
+                    throw;
                 }
             }
             else
