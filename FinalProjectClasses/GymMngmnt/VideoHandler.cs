@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace FinalProjectClasses.GymMngmnt
 {
-    public class VideoHandler
+    public class VideoHandler : IDisposable
     {
         private Dbcontext _db = new Dbcontext();
         public Video GetVideoByValue(string value)
@@ -28,6 +28,20 @@ namespace FinalProjectClasses.GymMngmnt
             using (_db)
             {
                 return (from c in _db.Images select c).ToList();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
             }
         }
     }
